@@ -31,11 +31,6 @@ body {
 }
 
 .sprite {
-	background-image: url("../assets/playerShip1_blue.png");
-	width: 37px;
-	height: 49px;
-	top: 300px;
-	left: 45px;
 	position: absolute;
 	z-index: 10;
 }
