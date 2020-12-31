@@ -7,6 +7,18 @@ class Sprite {
             this.anchorShift = new Point(-this.size.width / 2, -this.size.height / 2);
       }
 
+      addToBoard(shift) {
+            var div = document.createElement('div');
+            div.classList.add('sprite');
+            div.id = this.divName;
+            div.style.backgroundImage = `"url('${this.imgName}')"`;
+            div.style.width = `${this.size.width} px`; 
+            div.style.height = `${this.size.height} px`; 
+            $(GameSettings.playAreaDiv).append(div);
+
+            this.setPosition(this.setPosition(this.position.x, this.position.y, shift))
+      }
+
       removeFromBoard() {
             $('#' + this.divName).remove();
       }
