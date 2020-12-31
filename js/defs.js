@@ -16,8 +16,8 @@ const ImageFiles = [
   
       playerDivName: 'playerSprite',
       playerStart: {
-          x: 440,
-          y: 360
+          x: 45,
+          y: 300
       }
   };
   

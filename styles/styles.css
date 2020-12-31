@@ -12,8 +12,8 @@ body {
 
 #playArea {
 	position: relative;
-    	width: 800px;
-	height: 600px;
+    width: 720px;
+	height: 576px;
 	border: solid green 2px;
 }
 
@@ -34,7 +34,3 @@ body {
 	position: absolute;
 	z-index: 10;
 }
-
-
-
-
