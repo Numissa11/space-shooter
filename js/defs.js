@@ -18,6 +18,10 @@ const ImageFiles = [
       playerStart: {
           x: 45,
           y: 300
+      },
+      playerState: {
+            ok: 0,
+            dead: 1
       }
   };
   
