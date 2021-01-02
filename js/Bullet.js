@@ -37,4 +37,31 @@ class Bullet extends Sprite {
           this.lastAdded = 0;
           this.total_bullets = 0;
       }
+
+      update(dt) {
+            for (let i = this.listBullets.length - 1; i >= 0; --i) {
+                if (this.listBullets[i].dead == true) {
+                    this.listBullets.splice(i, 1);
+                } else {
+                    this.listBullets[i].update(dt);
+                }
+            }
+            this.lastAdded += dt;
+    
+            if (this.lastAdded > GameSettings.bulletFireRate && 
+                this.player.state != GameSettings.playerState.hitFlashing) {
+                    this.lastAdded = 0;
+                    this.listBullets.push(
+                        new Bullet(
+                            'bullet_' + this.total_bullets,
+                            GameManager.assets['Lasers/laserBlue02_s'],
+                            new Point(this.player.position.x + (this.player.size.width / 2), 
+                            this.player.position.y)
+                        )
+                    );
+                    this.total_bullets++;
+                }
+        }
+    }
+    
 }
