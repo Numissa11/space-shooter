@@ -4,7 +4,8 @@ function resetPlayer() {
 
         GameManager.player = new Player(GameSettings.playerDivName,
             new Point(GameSettings.playerStart.x, GameSettings.playerStart.y),
-            asset
+            asset,
+            new Rect(40, 40, GameSettings.playAreaWidth - 80, GameSettings.playAreaHeight - 80)
         );
         GameManager.player.addToBoard(true);
     }
@@ -15,7 +16,6 @@ function resetPlayer() {
 function init() {
     console.log('Main Game init()');
     resetPlayer();
-
 }
 
 function processAsset(indexNum) {
@@ -44,16 +44,16 @@ $(function () {
         function (e) {
             switch (e.which) {
                 case GameSettings.keyPress.up:
-                    GameManager.player.move(0, -1)
+                    GameManager.player.move(0, -1);
                     break;
                 case GameSettings.keyPress.down:
-                    GameManager.player.move(0, 1)
+                GameManager.player.move(0, 1);
                     break;
                 case GameSettings.keyPress.left:
-                    GameManager.player.move(-1, 0)
+                GameManager.player.move(-1, 0);
                     break;
                 case GameSettings.keyPress.right:
-                    GameManager.player.move(1, 0)
+                GameManager.player.move(1, 0);
                     break;
                 case GameSettings.keyPress.space:
                     break;
