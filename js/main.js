@@ -1,3 +1,12 @@
+function tick() {
+    let now = Date.now();
+    let dt = now - GameManager.lastUpdated;
+    GameManager.lastUpdated = now;
+    GameManager.fps = parseInt(1000 / dt);
+    
+    setTimeout(tick, GameSettings.targetFPS);
+}
+
 function resetPlayer() {
     if (GameManager.player == undefined) {
         let asset = GameManager.assets['playerShip1_blue'];
@@ -16,6 +25,8 @@ function resetPlayer() {
 function init() {
     console.log('Main Game init()');
     resetPlayer();
+    setTimeout(tick, GameSettings.targetFPS);
+
 }
 
 function processAsset(indexNum) {

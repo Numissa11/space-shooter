@@ -10,6 +10,7 @@ const ImageFiles = [
           down: 40,
           space: 32
       },
+      targetFPS: 1000/ 60,
       playAreaWidth: 800,
       playAreaHeight: 600,
       playAreaDiv: '#playArea',
@@ -28,7 +29,9 @@ const ImageFiles = [
   
   let GameManager = {
       assets : {},
-      player: undefined
+      player: undefined,
+      lastUpdated: Date.now(),
+      fps: 0
   };
   
   
