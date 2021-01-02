@@ -1,5 +1,6 @@
 const ImageFiles = [
-      'playerShip1_blue'
+      'playerShip1_blue',
+      ' laserBlue02_s'
   ];
   
   const GameSettings = {
@@ -11,6 +12,11 @@ const ImageFiles = [
           space: 32
       },
       targetFPS: 1000/ 60,
+
+      bulletSpeed: 700 / 1000,
+      bulletLife : 4000,
+      bulletFireRate : 2000,
+
       playAreaWidth: 800,
       playAreaHeight: 600,
       playAreaDiv: '#playArea',
@@ -30,6 +36,7 @@ const ImageFiles = [
   let GameManager = {
       assets : {},
       player: undefined,
+      bullats: undefined,
       lastUpdated: Date.now(),
       fps: 0
   };
