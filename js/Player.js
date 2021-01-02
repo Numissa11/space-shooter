@@ -8,4 +8,13 @@ class Player extends Sprite {
             this.state = GameSettings.playerState.ok;
       }
 
+      reset() {
+            this.state = GameSettings.playerState.ok;
+            this.score = 0;
+      }
+
+      incrementScore (amount) {
+            this.score += amount;
+      }
+
 }
