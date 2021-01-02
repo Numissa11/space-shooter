@@ -22,7 +22,8 @@ const ImageFiles = [
       playerState: {
             ok: 0,
             dead: 1
-      }
+      },
+      playerMoveStep: 8
   };
   
   let GameManager = {

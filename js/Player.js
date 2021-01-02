@@ -14,6 +14,13 @@ class Player extends Sprite {
           this.setHighScore();
           this.setPosition(GameSettings.playerStart.x, GameSettings.playerStart.y, true );
       }
+
+      move(x, y) {
+            let xStep = GameSettings.playerMoveStep * x;
+            let yStep = GameSettings.playerMoveStep * y;
+
+            this.incrementPosition(xStep, yStep);
+      }
   
       incrementScore (amount) {
           this.score += amount;
