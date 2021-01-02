@@ -2,19 +2,20 @@ function resetPlayer() {
     if (GameManager.player == undefined) {
         let asset = GameManager.assets['playerShip1_blue'];
 
-        GameManager.player = new Sprite(GameSettings.playerDivName,
+        GameManager.player = new Player(GameSettings.playerDivName,
             new Point(GameSettings.playerStart.x, GameSettings.playerStart.y),
-            asset.fileName,
-            new Size(asset.width, asset.height)
+            asset
         );
         GameManager.player.addToBoard(true);
     }
-	console.log('resetplayer() GameManager.player:' , GameManager.player);
+    console.log('resetplayer() GameManager.player:' , GameManager.player);
+    GameManager.player.reset();
 }
 
 function init() {
     console.log('Main Game init()');
     resetPlayer();
+
 }
 
 function processAsset(indexNum) {
