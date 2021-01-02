@@ -13,11 +13,17 @@ class Player extends Sprite {
             this.score = 0;
       }
 
-      incrementScore (amount) {
+      incrementScore(amount) {
             this.score += amount;
       }
       setScore() {
             $('#score').text(this.score);
+      }
+      setHighScore() {
+            if (this.score > this.highScore) {
+            this.highScore = this.score;
+            }
+            $('#highScore').text(this.highScore);
       }
 
 }
