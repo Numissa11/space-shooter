@@ -8,7 +8,7 @@ class Bullet extends Sprite {
   
       update(dt) {
           let inc = dt * GameSettings.bulletSpeed;
-          this.incrementPosition(0, -inc);
+          this.incrementPosition(-inc, 0);
           this.life -= dt;
           if (this.life < 0) {
               this.killMe();
@@ -20,3 +20,21 @@ class Bullet extends Sprite {
           this.removeFromBoard();
       }
   }
+
+  class BulletCollection {
+      constructor(player) {
+          this.listBullets = [];
+          this.lastAdded = 0;
+          this.player = player;
+          this.total_bullets = 0;
+      }
+  
+      reset() {
+          for (let i = 0; i < this.listBullets.length; ++i) {
+              this.listBullets[i].removeFromBoard();
+          }
+          this.listBullets = [];
+          this.lastAdded = 0;
+          this.total_bullets = 0;
+      }
+}
