@@ -16,5 +16,8 @@ class Player extends Sprite {
       incrementScore (amount) {
             this.score += amount;
       }
+      setScore() {
+            $('#score').text(this.score);
+      }
 
 }
