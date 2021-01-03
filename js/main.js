@@ -3,6 +3,8 @@ function tick() {
     let dt = now - GameManager.lastUpdated;
     GameManager.lastUpdated = now;
     GameManager.fps = parseInt(1000 / dt);
+
+    GameManager.bullets.update(dt)
     
     setTimeout(tick, GameSettings.targetFPS);
 }
@@ -22,11 +24,19 @@ function resetPlayer() {
     GameManager.player.reset();
 }
 
-function init() {
+function resetGame() {
     console.log('Main Game init()');
     resetPlayer();
+    resetBullets();
     setTimeout(tick, GameSettings.targetFPS);
+}
 
+function resetBullets() {
+    if(GameManager.bullets != undefined) {
+        GameManager.bullets.reset();
+    } else {
+        GameManager.bullets = new BulletCollection(GameManager.player)
+    }
 }
 
 function processAsset(indexNum) {
@@ -44,7 +54,7 @@ function processAsset(indexNum) {
             processAsset(indexNum);
         } else {
             console.log('Assets Done:', GameManager.assets);
-            init();
+            resetGame();
         }
     }
 }

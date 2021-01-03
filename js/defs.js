@@ -1,6 +1,6 @@
 const ImageFiles = [
       'playerShip1_blue',
-      'laserBlue02_s'
+      'Lasers/laserBlue02_s'
   ];
   
   const GameSettings = {
@@ -36,7 +36,7 @@ const ImageFiles = [
   let GameManager = {
       assets : {},
       player: undefined,
-      bullats: undefined,
+      bullets: undefined,
       lastUpdated: Date.now(),
       fps: 0
   };

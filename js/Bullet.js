@@ -8,7 +8,7 @@ class Bullet extends Sprite {
   
       update(dt) {
           let inc = dt * GameSettings.bulletSpeed;
-          this.incrementPosition(-inc, 0);
+          this.incrementPosition(inc, 0);
           this.life -= dt;
           if (this.life < 0) {
               this.killMe();
@@ -48,15 +48,14 @@ class Bullet extends Sprite {
             }
             this.lastAdded += dt;
     
-            if (this.lastAdded > GameSettings.bulletFireRate && 
-                this.player.state != GameSettings.playerState.hitFlashing) {
+            if (this.lastAdded > GameSettings.bulletFireRate) {
                     this.lastAdded = 0;
                     this.listBullets.push(
                         new Bullet(
                             'bullet_' + this.total_bullets,
                             GameManager.assets['Lasers/laserBlue02_s'],
-                            new Point(this.player.position.x + (this.player.size.width / 2), 
-                            this.player.position.y)
+                            new Point(this.player.position.x + (this.player.size.width), 
+                            this.player.position.y + (this.player.size.height / 2))
                         )
                     );
                     this.total_bullets++;
