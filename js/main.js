@@ -26,7 +26,6 @@ function resetPlayer() {
 }
 
 function resetGame() {
-    console.log('Main Game init()');
     resetPlayer();
     resetBullets();
     resetEnemy();

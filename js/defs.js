@@ -12,13 +12,13 @@ const ImageFiles = [
           down: 40,
           space: 32
       },
-      targetFPS: 1000/ 600,
+      targetFPS: 1000/ 800,
 
       bulletSpeed: 700 / 1000,
       bulletLife : 4000,
       bulletFireRate : 2000,
 
-      enemySpeed: 500 / 1000,
+      enemySpeed: 300 / 1000,
       enemyLife : 4000,
       enemyComingRate : 2000,
 

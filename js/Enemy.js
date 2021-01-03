@@ -7,13 +7,9 @@ class Enemy extends Sprite {
       }
 
       updateEnemy(dt) {
-           
             let inc = dt * GameSettings.enemySpeed;
             let array = [inc, -inc];
-
             let dir = array[Math.floor(Math.random()*array.length)]
-
-          
             this.incrementPosition(-inc, dir);
             this.life -= dt;
             if (this.life < 0) {
