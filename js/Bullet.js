@@ -54,8 +54,8 @@ class Bullet extends Sprite {
                         new Bullet(
                             'bullet_' + this.total_bullets,
                             GameManager.assets['Lasers/laserBlue02_s'],
-                            new Point(this.player.position.x + (this.player.size.width), 
-                            this.player.position.y + (this.player.size.height / 2))
+                            new Point((this.player.position.x) + (this.player.size.width), 
+                            (this.player.position.y) + (this.player.size.height / 2))
                         )
                     );
                     this.total_bullets++;
