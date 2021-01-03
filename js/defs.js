@@ -1,6 +1,7 @@
 const ImageFiles = [
       'playerShip1_blue',
-      'Lasers/laserBlue02_s'
+      'Lasers/laserBlue02_s',
+      'Enemy/enemyRed1'
   ];
   
   const GameSettings = {
@@ -16,6 +17,10 @@ const ImageFiles = [
       bulletSpeed: 700 / 1000,
       bulletLife : 4000,
       bulletFireRate : 2000,
+
+      enemySpeed: 600 / 1000,
+      enemyLife : 4000,
+      enemyComingRate : 2000,
 
       playAreaWidth: 800,
       playAreaHeight: 600,
@@ -37,6 +42,7 @@ const ImageFiles = [
       assets : {},
       player: undefined,
       bullets: undefined,
+      enemies: undefined,
       lastUpdated: Date.now(),
       fps: 0
   };

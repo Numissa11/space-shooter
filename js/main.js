@@ -4,7 +4,8 @@ function tick() {
     GameManager.lastUpdated = now;
     GameManager.fps = parseInt(1000 / dt);
 
-    GameManager.bullets.update(dt)
+    GameManager.bullets.update(dt);
+    GameManager.enemies.updateEnemy(dt);
     
     setTimeout(tick, GameSettings.targetFPS);
 }
@@ -28,6 +29,7 @@ function resetGame() {
     console.log('Main Game init()');
     resetPlayer();
     resetBullets();
+    resetEnemy();
     setTimeout(tick, GameSettings.targetFPS);
 }
 
@@ -36,6 +38,14 @@ function resetBullets() {
         GameManager.bullets.reset();
     } else {
         GameManager.bullets = new BulletCollection(GameManager.player)
+    }
+}
+
+function resetEnemy() {
+    if(GameManager.enemies != undefined) {
+        GameManager.enemies.reset();
+    } else {
+        GameManager.enemies = new EnemyCollection()
     }
 }
 
