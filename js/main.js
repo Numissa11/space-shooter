@@ -2,11 +2,10 @@ function tick() {
     let now = Date.now();
     let dt = now - GameManager.lastUpdated;
     GameManager.lastUpdated = now;
-    GameManager.fps = parseInt(1000 / dt);
-
     GameManager.bullets.update(dt);
-    GameManager.enemies.updateEnemy(dt);
-    
+    GameManager.enemies.updateEnemy(dt); 
+  //  GameManager.enemies.checkEnemy(x);
+      
     setTimeout(tick, GameSettings.targetFPS);
 }
 

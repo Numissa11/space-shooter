@@ -1,21 +1,42 @@
 class Enemy extends Sprite {
-      constructor(divName, assetDesc, position) {
+      constructor(divName, assetDesc, position, boundaryRect) {
             super(divName, position, assetDesc.fileName, new Size(assetDesc.width, assetDesc.height));
             this.life = GameSettings.enemyLife;
             this.dead = false;
+            this.boundaryRect = boundaryRect;
+            this.boundaryRect.shift(this.anchorShift.x, this.anchorShift.y);
             this.addToBoard(true);
       }
 
+
+
       updateEnemy(dt) {
             let inc = dt * GameSettings.enemySpeed;
-            let array = [inc, -inc];
-            let dir = array[Math.floor(Math.random()*array.length)]
-            this.incrementPosition(-inc, dir);
+            let arrayInc = [inc, -inc];
+            let direction = arrayInc[Math.floor(Math.random() * arrayInc.length)]
+            this.incrementPosition(-inc, (2 * direction));
             this.life -= dt;
+
             if (this.life < 0) {
                   this.killMe();
             }
+
+            console.log(this.boundaryRect.max.y)
+
+            if (this.boundaryRect.OutsideVertical(this.position.y) == true) {
+
+                  let outY = this.position.y
+
+                   if (outY < this.boundaryRect.origin.y ) {
+                         this.incrementPosition(-inc, outY + 2);
+                         
+                   } else if (outY > this.boundaryRect.max.y) {
+                         this.incrementPosition(-inc, outY - 2);
+                   }
+
+            }
       }
+
 
       killMe() {
             this.dead = true;
@@ -55,7 +76,8 @@ class EnemyCollection {
                         new Enemy(
                               'enemy_' + this.total_enemy,
                               GameManager.assets['Enemy/enemyRed1'],
-                              new Point(GameSettings.playAreaWidth, Math.random() * (GameSettings.playAreaHeight - 40))
+                              new Point(GameSettings.playAreaWidth, Math.random() * (GameSettings.playAreaHeight - 40)),
+                              new Rect(40, 40, GameSettings.playAreaWidth - 80, GameSettings.playAreaHeight - 80)
                         )
                   );
                   this.total_enemy++;

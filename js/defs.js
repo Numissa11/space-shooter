@@ -12,7 +12,7 @@ const ImageFiles = [
           down: 40,
           space: 32
       },
-      targetFPS: 1000/ 800,
+      targetFPS: 1000/ 90,
 
       bulletSpeed: 700 / 1000,
       bulletLife : 4000,
@@ -44,7 +44,7 @@ const ImageFiles = [
       bullets: undefined,
       enemies: undefined,
       lastUpdated: Date.now(),
-      fps: 0
+     
   };
   
   
