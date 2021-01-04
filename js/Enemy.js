@@ -14,24 +14,22 @@ class Enemy extends Sprite {
             let inc = dt * GameSettings.enemySpeed;
             let arrayInc = [inc, -inc];
             let direction = arrayInc[Math.floor(Math.random() * arrayInc.length)]
-            this.incrementPosition(-inc, (2 * direction));
+            this.incrementPosition(-inc, (0.8 * direction));
             this.life -= dt;
 
             if (this.life < 0) {
                   this.killMe();
             }
 
-            console.log(this.boundaryRect.max.y)
-
             if (this.boundaryRect.OutsideVertical(this.position.y) == true) {
 
-                  let outY = this.position.y
+                  let outsideY = this.position.y
 
-                   if (outY < this.boundaryRect.origin.y ) {
-                         this.incrementPosition(-inc, outY + 2);
+                   if (outsideY < this.boundaryRect.origin.y ) {
+                         this.incrementPosition(-inc, outsideY + 2);
                          
-                   } else if (outY > this.boundaryRect.max.y) {
-                         this.incrementPosition(-inc, outY - 2);
+                   } else if (outsideY > this.boundaryRect.max.y) {
+                         this.incrementPosition(-inc, outsideY - 2);
                    }
 
             }
@@ -76,7 +74,7 @@ class EnemyCollection {
                         new Enemy(
                               'enemy_' + this.total_enemy,
                               GameManager.assets['Enemy/enemyRed1'],
-                              new Point(GameSettings.playAreaWidth, Math.random() * (GameSettings.playAreaHeight - 40)),
+                              new Point(GameSettings.playAreaWidth, Math.random() * (GameSettings.playAreaHeight - 60)),
                               new Rect(40, 40, GameSettings.playAreaWidth - 80, GameSettings.playAreaHeight - 80)
                         )
                   );

@@ -12,7 +12,7 @@ const ImageFiles = [
           down: 40,
           space: 32
       },
-      targetFPS: 1000/ 90,
+      targetFPS: 1000/ 140,
 
       bulletSpeed: 700 / 1000,
       bulletLife : 4000,
