@@ -9,7 +9,6 @@ function tick() {
 }
 
 function showStart() {
-    GameManager.phase = GameSettings.readyToplay;
     $("#messageContainer").append('<div id="messageContainer">' +
         '<button class="game" onclick="runCountDown()">' + 'GAME1' + '</button>' +
         '<button class="game" onclick="runCountDown()">' + 'GAME2' + '</button>' +
@@ -19,7 +18,7 @@ function showStart() {
 }
 
 function showGameOver() {
-    GameManager.phase = GameSettings.gameOver;
+
     appendMessage('GAME OVER')
     setTimeout(clearMessages, GameSettings.gamoverTime)
     setTimeout(showStart, GameSettings.startTime)
@@ -27,14 +26,12 @@ function showGameOver() {
 
 function endCountDown() {
     clearMessages();
-    GameManager.phase = GameSettings.gamePhase.playing;
     GameManager.lastUpdated = Date.now();
     setTimeout(tick, GameSettings.targetFPS);
 }
 
 function runCountDown() {
     clearMessages();
-    GameManager.phase = GameSettings.gamePhase.countdownToStart;
     writeMessage(3);
     for (let i = 0; i < GameSettings.countDownValues.length; ++i) {
         setTimeout(writeMessage, GameSettings.countdownGap * (i + 1),
@@ -98,7 +95,11 @@ function resetGame() {
     resetPlayer();
     resetBullets();
     resetEnemy();
-   showStart();
+    showStart();
+
+    GameManager.lastUpdated = Date.now();
+    GameManager.elapsedTime = 0;
+
 }
 
 function processAsset(indexNum) {

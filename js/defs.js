@@ -36,12 +36,7 @@ const GameSettings = {
             ok: 0,
             dead: 1
       },
-      gamePhase: {
-            readyToplay: 1,
-            countdownToStart: 2,
-            playing: 3,
-            gameOver: 4
-      },
+     
       countdownGap: 700,
       countDownValues: ['2', '1', 'GO!'],
       gamoverTime: 2000,
