@@ -43,7 +43,10 @@ const GameSettings = {
             gameOver: 4
       },
       countdownGap: 700,
-      countDownValues: ['2', '1', 'GO!']
+      countDownValues: ['2', '1', 'GO!'],
+      gamoverTime: 2000,
+      startTime: 2500
+
 };
 
 let GameManager = {

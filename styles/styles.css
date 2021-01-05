@@ -37,8 +37,11 @@ body {
 }
 
 #messageContainer {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
 	position: absolute;
-	top: 200px;
+	top: 50px;
 	text-align: center;
 	width: 100%;
 	z-index: 40;
@@ -46,11 +49,25 @@ body {
 
 .message {
 	padding:20px;
+	font-size: 3em;
+	margin-top:190px;
 }
 
-#bigMessage {
-	font-size: 3em;
+.menu {
+	font-size: 2.5em;
 }
-#smallMessage {
-	font-size: 1em;
+
+.menu:hover {
+	color: green;
+}
+
+.game {
+	font-size: 1.5em;
+	border-radius: 98%;
+	padding: 12px;
+	margin-bottom: 1.8em;
+}
+
+.game:hover {
+	color:green;
 }
