@@ -12,7 +12,7 @@ const GameSettings = {
             down: 40,
             space: 32
       },
-      targetFPS: 1000 / 140, 
+      targetFPS: 1000 / 140,
       playerMoveStep: 8,
 
       bulletSpeed: 700 / 1000,
@@ -42,17 +42,18 @@ const GameSettings = {
             playing: 3,
             gameOver: 4
       },
-     coutdownGap: 700,
-     coutdownValues: ['2', '1', 'GO!']
+      countdownGap: 700,
+      countDownValues: ['2', '1', 'GO!']
 };
 
 let GameManager = {
       assets: {},
       player: undefined,
       bullets: undefined,
-      phase: GameSettings.gamePhase.gameOver,
       enemies: undefined,
+      elapsedTime: 0,
+      phase: GameSettings.gamePhase.gameOver,
       lastUpdated: Date.now(),
-
+      fps: 0
 };
 

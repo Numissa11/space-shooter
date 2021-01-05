@@ -74,7 +74,7 @@ class EnemyCollection {
                         new Enemy(
                               'enemy_' + this.total_enemy,
                               GameManager.assets['Enemy/enemyRed1'],
-                              new Point(GameSettings.playAreaWidth, Math.random() * (GameSettings.playAreaHeight - 60)),
+                              new Point(GameSettings.playAreaWidth, Math.random() * (GameSettings.playAreaHeight - 100)),
                               new Rect(40, 40, GameSettings.playAreaWidth - 80, GameSettings.playAreaHeight - 80)
                         )
                   );
