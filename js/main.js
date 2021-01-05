@@ -49,37 +49,6 @@ function resetEnemy() {
     }
 }
 
-function endCountDown() {
-    clearMessages();
-    GameManager.phase = GameSettings.gamePhase.playing;
-    GameManager.lastUpdated = Date.now();
-    setTimeout(tick, GameSettings.targetFPS);
-}
-
-function runCountDown() {
-    GameManager.phase = GameSettings.gamePhase.countdownToStart;
-    writeMessage(3);
-    for (let i = 0; i < GameSettings.countDownValues.length; ++i) {
-        setTimeout(writeMessage, GameSettings.countdownGap * (i + 1), 
-            GameSettings.countDownValues[i]);
-    }
-    setTimeout(endCountDown, 
-        (GameSettings.countDownValues.length + 1) * GameSettings.countdownGap);
-}
-
-function writeMessage(text) {
-    clearMessages();
-    appendMessage(text);
-}
-
-function appendMessage(text) {
-    $('#messageContainer').append('<div class="message">' + text + '</div>');
-}
-
-function clearMessages() {
-    $('#messageContainer').empty();
-}
-
 function processAsset(indexNum) {
     let img = new Image();
     let fileName = 'assets/' + ImageFiles[indexNum] + '.png';
