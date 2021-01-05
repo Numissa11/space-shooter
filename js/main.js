@@ -25,9 +25,11 @@ function resetPlayer() {
 }
 
 function resetGame() {
+    console.log('Game reset');
     resetPlayer();
     resetBullets();
     resetEnemy();
+    clearMessages();
     setTimeout(tick, GameSettings.targetFPS);
 }
 
@@ -45,6 +47,19 @@ function resetEnemy() {
     } else {
         GameManager.enemies = new EnemyCollection()
     }
+}
+
+function writeMessage(text) {
+clearMessages();
+appendMessage(text);
+}
+
+function appendMessage(text) {
+    $('messageContainer').append('<div class="message">' + text + '</div>')
+}
+
+function clearMessages() {
+    $('#messageContainer').empty();
 }
 
 function processAsset(indexNum) {
