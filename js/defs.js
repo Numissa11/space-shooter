@@ -2,49 +2,57 @@ const ImageFiles = [
       'playerShip1_blue',
       'Lasers/laserBlue02_s',
       'Enemy/enemyRed1'
-  ];
-  
-  const GameSettings = {
+];
+
+const GameSettings = {
       keyPress: {
-          left: 37,
-          right: 39,
-          up: 38,
-          down: 40,
-          space: 32
+            left: 37,
+            right: 39,
+            up: 38,
+            down: 40,
+            space: 32
       },
-      targetFPS: 1000/ 140,
+      targetFPS: 1000 / 140, 
+      playerMoveStep: 8,
 
       bulletSpeed: 700 / 1000,
-      bulletLife : 4000,
-      bulletFireRate : 2000,
+      bulletLife: 4000,
+      bulletFireRate: 2000,
 
       enemySpeed: 300 / 1000,
-      enemyLife : 4000,
-      enemyComingRate : 2000,
+      enemyLife: 4000,
+      enemyComingRate: 2000,
 
       playAreaWidth: 800,
       playAreaHeight: 600,
       playAreaDiv: '#playArea',
-  
+
       playerDivName: 'playerSprite',
       playerStart: {
-          x: 45,
-          y: 300
+            x: 45,
+            y: 300
       },
       playerState: {
             ok: 0,
             dead: 1
       },
-      playerMoveStep: 8
-  };
-  
-  let GameManager = {
-      assets : {},
+      gamePhase: {
+            readyToplay: 1,
+            countdownToStart: 2,
+            playing: 3,
+            gameOver: 4
+      },
+     coutdownGap: 700,
+     coutdownValues: ['2', '1', 'GO!']
+};
+
+let GameManager = {
+      assets: {},
       player: undefined,
       bullets: undefined,
+      phase: GameSettings.gamePhase.gameOver,
       enemies: undefined,
       lastUpdated: Date.now(),
-     
-  };
-  
-  
+
+};
+
