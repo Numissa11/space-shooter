@@ -14,14 +14,17 @@ const GameSettings = {
       },
       targetFPS: 1000 / 140,
       playerMoveStep: 8,
+      score: 100,
 
       bulletSpeed: 700 / 1000,
       bulletLife: 4000,
       bulletFireRate: 2000,
+      bulletTop: 10,
 
       enemySpeed: 300 / 1000,
       enemyLife: 4000,
       enemyComingRate: 2000,
+      EnemyTop: 10,
 
       playAreaWidth: 800,
       playAreaHeight: 600,
@@ -50,7 +53,6 @@ let GameManager = {
       bullets: undefined,
       enemies: undefined,
       elapsedTime: 0,
-      phase: GameSettings.gamePhase.gameOver,
       lastUpdated: Date.now(),
       fps: 0
 };

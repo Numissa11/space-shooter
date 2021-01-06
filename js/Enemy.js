@@ -25,12 +25,12 @@ class Enemy extends Sprite {
 
                   let outsideY = this.position.y
 
-                   if (outsideY < this.boundaryRect.origin.y ) {
-                         this.incrementPosition(-inc, outsideY + 2);
-                         
-                   } else if (outsideY > this.boundaryRect.max.y) {
-                         this.incrementPosition(-inc, outsideY - 2);
-                   }
+                  if (outsideY < this.boundaryRect.origin.y) {
+                        this.incrementPosition(-inc, outsideY + 2);
+
+                  } else if (outsideY > this.boundaryRect.max.y) {
+                        this.incrementPosition(-inc, outsideY - 2);
+                  }
 
             }
       }
@@ -43,10 +43,12 @@ class Enemy extends Sprite {
 }
 
 class EnemyCollection {
-      constructor() {
+      constructor(player, bullets) {
             this.listEnemy = [];
             this.lastAdded = 0;
             this.total_enemy = 0;
+            this.player = player;
+            this.bullets = bullets;
       }
 
       reset() {
@@ -59,13 +61,7 @@ class EnemyCollection {
       }
 
       updateEnemy(dt) {
-            for (let i = this.listEnemy.length - 1; i >= 0; --i) {
-                  if (this.listEnemy[i].dead == true) {
-                        this.listEnemy.splice(i, 1);
-                  } else {
-                        this.listEnemy[i].updateEnemy(dt);
-                  }
-            }
+
             this.lastAdded += dt;
 
             if (this.lastAdded > GameSettings.enemyComingRate) {
@@ -79,6 +75,36 @@ class EnemyCollection {
                         )
                   );
                   this.total_enemy++;
+            }
+
+
+            for (let i = this.listEnemy.length - 1; i >= 0; --i) {
+
+                  if (this.listEnemy[i].dead == true) {
+                        this.listEnemy.splice(i, 1);
+
+                  } else if (this.listEnemy[i].dead == false) {
+                        let en = this.listEnemy[i];
+
+                        for (let b = 0; b < this.bullets.listBullets.length; ++b) {
+                              let bu = this.bullets.listBullets[b];
+
+                              if (bu.dead == false &&
+                                    bu.position.y > GameSettings.bulletTop &&
+                                    en.containingBox.IntersectedBy(bu.containingBox) == true) {
+
+                                    this.player.incrementScore(GameSettings.score);
+                                    bu.killMe();
+                                    en.killMe();
+
+                              }
+
+                        }
+                        en.updateEnemy(dt);
+                  }
+
+                 
+
             }
       }
 }

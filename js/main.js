@@ -86,7 +86,7 @@ function resetEnemy() {
     if (GameManager.enemies != undefined) {
         GameManager.enemies.reset();
     } else {
-        GameManager.enemies = new EnemyCollection()
+        GameManager.enemies = new EnemyCollection(GameManager.player, GameManager.bullets)
     }
 }
 
