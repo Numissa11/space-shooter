@@ -90,9 +90,10 @@ class EnemyCollection {
                               let bu = this.bullets.listBullets[b];
 
                               if (bu.dead == false &&
-                                    bu.position.y > GameSettings.bulletTop &&
+                                    bu.position.y > GameSettings.topCorner &&
                                     en.containingBox.IntersectedBy(bu.containingBox) == true) {
 
+                                    en.dead = true;
                                     this.player.incrementScore(GameSettings.score);
                                     bu.killMe();
                                     en.killMe();

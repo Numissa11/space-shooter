@@ -4,6 +4,7 @@ function tick() {
     GameManager.lastUpdated = now;
     GameManager.bullets.update(dt);
     GameManager.enemies.updateEnemy(dt);
+    GameManager.player.checkPlayerCollision();
 
     setTimeout(tick, GameSettings.targetFPS);
 }
@@ -68,7 +69,7 @@ function resetPlayer() {
         );
         GameManager.player.addToBoard(true);
     }
-    console.log('resetplayer() GameManager.player:', GameManager.player);
+    console.log('resetplayer() GameManager.player:', GameManager.enemies);
     GameManager.player.reset();
 }
 

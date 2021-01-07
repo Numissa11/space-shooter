@@ -19,12 +19,11 @@ const GameSettings = {
       bulletSpeed: 700 / 1000,
       bulletLife: 4000,
       bulletFireRate: 2000,
-      bulletTop: 10,
+      topCorner: 10,
 
       enemySpeed: 300 / 1000,
       enemyLife: 4000,
       enemyComingRate: 2000,
-      EnemyTop: 10,
 
       playAreaWidth: 800,
       playAreaHeight: 600,

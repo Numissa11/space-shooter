@@ -22,11 +22,12 @@ class Bullet extends Sprite {
   }
 
   class BulletCollection {
-      constructor(player) {
+      constructor(player, enemies) {
           this.listBullets = [];
           this.lastAdded = 0;
           this.player = player;
           this.total_bullets = 0;
+          this.enemies = enemies;
       }
   
       reset() {
@@ -39,7 +40,8 @@ class Bullet extends Sprite {
       }
 
       update(dt) {
-            for (let i = this.listBullets.length - 1; i >= 0; --i) {
+
+        for (let i = this.listBullets.length - 1; i >= 0; --i) {
                 if (this.listBullets[i].dead == true) {
                     this.listBullets.splice(i, 1);
                 } else {
