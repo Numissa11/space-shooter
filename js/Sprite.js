@@ -9,6 +9,8 @@ class Sprite {
             this.size.width, this.size.height);
     }
 
+    
+
     addToBoard(shift) {
         let div = document.createElement("div");
         div.classList.add("sprite");

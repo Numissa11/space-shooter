@@ -18,7 +18,7 @@ const GameSettings = {
 
       bulletSpeed: 700 / 1000,
       bulletLife: 4000,
-      bulletFireRate: 2000,
+      bulletFireRate: 8000,
       topCorner: 10,
 
       enemySpeed: 300 / 1000,
@@ -34,16 +34,12 @@ const GameSettings = {
             x: 45,
             y: 300
       },
-      playerState: {
-            ok: 0,
-            dead: 1
-      },
-     
+          
       countdownGap: 700,
       countDownValues: ['2', '1', 'GO!'],
       gamoverTime: 2000,
-      startTime: 2500
-
+      startTime: 3500,
+      gameOver: false
 };
 
 let GameManager = {

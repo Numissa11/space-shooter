@@ -4,13 +4,14 @@ class Player extends Sprite {
             new Size(assetDesc.width, assetDesc.height));
         this.score = 0;
         this.highScore = 0;
-        this.state = GameSettings.playerState.ok;
+        this.player = GameManager.player;
+        this.bullets = GameManager.bullets;
+        this.enemies = GameManager.enemies;
         this.boundaryRect = boundaryRect;
         this.boundaryRect.shift(this.anchorShift.x, this.anchorShift.y);
     }
 
     reset() {
-        this.state = GameSettings.playerState.ok;
         this.score = 0;
         this.setScore();
         this.setHighScore();
@@ -32,18 +33,19 @@ class Player extends Sprite {
 
     }
 
-    checkPlayerCollision () {
+    updatePlayer () {
         let maListeEnemy = GameManager.enemies.listEnemy;
 
         for (let i = maListeEnemy.length - 1; i >= 0; --i) {
-            let enemySolo = maListeEnemy[i]
+            let enemySolo = maListeEnemy[i];
+            let playerSolo = GameManager.player;
 
             if (enemySolo.dead == false &&
                 enemySolo.position.y > GameSettings.topCorner &&
-                GameManager.player.containingBox.IntersectedBy(enemySolo.containingBox) == true
+                playerSolo.containingBox.IntersectedBy(enemySolo.containingBox) == true
             ) {
+                playerSolo.dead = true,
                 enemySolo.killMe();
-
             }
 
         }

@@ -4,9 +4,16 @@ function tick() {
     GameManager.lastUpdated = now;
     GameManager.bullets.update(dt);
     GameManager.enemies.updateEnemy(dt);
-    GameManager.player.checkPlayerCollision();
+    GameManager.player.updatePlayer();
 
-    setTimeout(tick, GameSettings.targetFPS);
+    let timer = setTimeout(tick, GameSettings.targetFPS); 
+    
+    if (GameManager.player.dead == true) {
+        GameManager.player.dead = false;
+        GameSettings.gameOver = true;
+        clearTimeout(timer);
+        showGameOver();
+    }
 }
 
 function showStart() {
@@ -20,9 +27,9 @@ function showStart() {
 
 function showGameOver() {
 
-    appendMessage('GAME OVER')
-    setTimeout(clearMessages, GameSettings.gamoverTime)
-    setTimeout(showStart, GameSettings.startTime)
+    appendMessage('GAME OVER');
+    setTimeout(clearMessages, GameSettings.gamoverTime);
+    setTimeout(showStart, GameSettings.startTime);
 }
 
 function endCountDown() {
@@ -57,7 +64,6 @@ function clearMessages() {
 }
 
 
-
 function resetPlayer() {
     if (GameManager.player == undefined) {
         let asset = GameManager.assets['playerShip1_blue'];
@@ -69,10 +75,8 @@ function resetPlayer() {
         );
         GameManager.player.addToBoard(true);
     }
-    console.log('resetplayer() GameManager.player:', GameManager.enemies);
     GameManager.player.reset();
 }
-
 
 
 function resetBullets() {
@@ -91,14 +95,16 @@ function resetEnemy() {
     }
 }
 
-function resetGame() {
-    console.log('Game reset');
+function resetGame() { 
+    
+    if (GameSettings.gameOver == false) {
+    showStart();
+}
     resetPlayer();
     resetBullets();
     resetEnemy();
-    showStart();
 
-    GameManager.lastUpdated = Date.now();
+       GameManager.lastUpdated = Date.now();
     GameManager.elapsedTime = 0;
 
 }
