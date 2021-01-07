@@ -44,6 +44,8 @@ class Player extends Sprite {
                 enemySolo.position.y > GameSettings.topCorner &&
                 playerSolo.containingBox.IntersectedBy(enemySolo.containingBox) == true
             ) {
+                GameManager.enemies.killAll();
+                GameManager.bullets.killAll();
                 playerSolo.dead = true,
                 enemySolo.killMe();
             }

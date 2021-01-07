@@ -9,7 +9,6 @@ class Enemy extends Sprite {
       }
 
 
-
       updateEnemy(dt) {
             let inc = dt * GameSettings.enemySpeed;
             let arrayInc = [inc, -inc];
@@ -40,6 +39,7 @@ class Enemy extends Sprite {
             this.dead = true;
             this.removeFromBoard();
       }
+
 }
 
 class EnemyCollection {
@@ -59,6 +59,12 @@ class EnemyCollection {
             this.lastAdded = 0;
             this.total_enemy = 0;
       }
+
+      killAll() {
+            for (let i = 0; i < this.listEnemy.length; ++i) {
+                this.listEnemy[i].killMe();
+            }
+        }
 
       updateEnemy(dt) {
 

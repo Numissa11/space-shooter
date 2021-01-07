@@ -6,8 +6,8 @@ function tick() {
     GameManager.enemies.updateEnemy(dt);
     GameManager.player.updatePlayer();
 
-    let timer = setTimeout(tick, GameSettings.targetFPS); 
-    
+    let timer = setTimeout(tick, GameSettings.targetFPS);
+
     if (GameManager.player.dead == true) {
         GameManager.player.dead = false;
         GameSettings.gameOver = true;
@@ -95,16 +95,16 @@ function resetEnemy() {
     }
 }
 
-function resetGame() { 
-    
+function resetGame() {
+
     if (GameSettings.gameOver == false) {
-    showStart();
-}
+        showStart();
+    }
     resetPlayer();
     resetBullets();
     resetEnemy();
 
-       GameManager.lastUpdated = Date.now();
+    GameManager.lastUpdated = Date.now();
     GameManager.elapsedTime = 0;
 
 }
