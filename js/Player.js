@@ -44,6 +44,7 @@ class Player extends Sprite {
                 enemySolo.position.y > GameSettings.topCorner &&
                 playerSolo.containingBox.IntersectedBy(enemySolo.containingBox) == true
             ) {
+                $('#' + this.divName).css({'opacity' : '0.4'})
                 GameManager.enemies.killAll();
                 GameManager.bullets.killAll();
                 playerSolo.dead = true,

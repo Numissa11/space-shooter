@@ -6,6 +6,8 @@ function tick() {
     GameManager.enemies.updateEnemy(dt);
     GameManager.player.updatePlayer();
 
+console.log('player', GameManager.player);
+
     let timer = setTimeout(tick, GameSettings.targetFPS);
 
     if (GameManager.player.dead == true) {
@@ -23,6 +25,10 @@ function showStart() {
         '<button class="game" onclick="runCountDown()">' + 'GAME3' + '</button>' +
         '<div class="menu">' + 'EXIT' + '</div>' +
         '</div>')
+
+        $('#' + GameSettings.playerDivName).css({'opacity' : '1.0'})
+
+
 }
 
 function showGameOver() {
