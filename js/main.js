@@ -27,7 +27,7 @@ function showStart() {
 
 function showGameOver() {
 
-    appendMessage('GAME OVER');
+    appendMessage('GAME OVER !');
     setTimeout(clearMessages, GameSettings.gamoverTime);
     setTimeout(showStart, GameSettings.startTime);
 }
