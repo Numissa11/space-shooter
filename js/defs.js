@@ -47,6 +47,7 @@ let GameManager = {
       player: undefined,
       bullets: undefined,
       enemies: undefined,
+      timouts: [],
       elapsedTime: 0,
       lastUpdated: Date.now(),
       fps: 0
