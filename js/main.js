@@ -6,8 +6,6 @@ function tick() {
     GameManager.enemies.updateEnemy(dt);
     GameManager.player.updatePlayer();
 
-console.log('player', GameManager.player);
-
     let timer = setTimeout(tick, GameSettings.targetFPS);
 
     if (GameManager.player.dead == true) {
@@ -15,6 +13,8 @@ console.log('player', GameManager.player);
         GameSettings.gameOver = true;
         clearTimeout(timer);
         showGameOver();
+    removeStars();
+
     }
 }
 
@@ -26,7 +26,7 @@ function showStart() {
         '<div class="menu">' + 'EXIT' + '</div>' +
         '</div>')
 
-        $('#' + GameSettings.playerDivName).css({'opacity' : '1.0'})
+    $('#' + GameSettings.playerDivName).css({ 'opacity': '1.0' })
 
 
 }
@@ -39,6 +39,7 @@ function showGameOver() {
 }
 
 function endCountDown() {
+    creatStars();
     clearMessages();
     GameManager.lastUpdated = Date.now();
     setTimeout(tick, GameSettings.targetFPS);
@@ -105,10 +106,12 @@ function resetGame() {
 
     if (GameSettings.gameOver == false) {
         showStart();
+        pauseStars();
     }
     resetPlayer();
     resetBullets();
     resetEnemy();
+
 
     GameManager.lastUpdated = Date.now();
     GameManager.elapsedTime = 0;

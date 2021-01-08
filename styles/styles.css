@@ -29,6 +29,7 @@ body {
 
 .score {
 	padding: 10px;
+	z-index: 40;
 }
 
 .sprite {
@@ -88,7 +89,7 @@ body {
 	top: 10px;
 	width: 3px;
 	height: 3px;
-	animation-duration: 4s;  
+	animation-duration: 5s;  
 	background-color: gray;
     }
     
@@ -96,7 +97,7 @@ body {
 	top: 50px;
 	width: 4px;
 	height: 4px;
-	animation-duration: 3s;  
+	animation-duration: 4s;  
     }
     
     .big {
@@ -104,14 +105,14 @@ body {
 	top: 100px;
 	width: 5px;
 	height: 5px;
-	animation-duration: 2s;  
+	animation-duration: 3s;  
     }
-
-@keyframes moveX {
+    
+    @keyframes moveX {
 	from {
-	  transform: translateX(100vw);
+	  transform: translateX(930px);
 	}
 	to {
-	  transform: translateX(-600px);
+	  transform: translateX(160px);
 	}
     }
