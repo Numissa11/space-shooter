@@ -35,7 +35,7 @@ const GameSettings = {
             y: 300
       },
           
-      countdownGap: 950,
+      countdownGap: 700,
       countDownValues: ['2', '1', 'GO!'],
       gamoverTime: 2000,
       startTime: 2800,
