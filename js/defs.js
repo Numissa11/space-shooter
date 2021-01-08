@@ -1,7 +1,7 @@
 const ImageFiles = [
-      'playerShip1_blue',
-      'Lasers/laserBlue02_s',
-      'Enemy/enemyRed1'
+      'playerShip',
+      'Lasers/laserBlue',
+      'Enemy/enemyShip'
 ];
 
 const GameSettings = {

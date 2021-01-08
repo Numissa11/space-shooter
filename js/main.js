@@ -77,7 +77,7 @@ function clearMessages() {
 
 function resetPlayer() {
     if (GameManager.player == undefined) {
-        let asset = GameManager.assets['playerShip1_blue'];
+        let asset = GameManager.assets['playerShip'];
 
         GameManager.player = new Player(GameSettings.playerDivName,
             new Point(GameSettings.playerStart.x, GameSettings.playerStart.y),
