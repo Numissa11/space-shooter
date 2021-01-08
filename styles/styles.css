@@ -24,7 +24,6 @@ body {
 	top: 10px;
 	text-align: left;
 	font-size: 1.5em;
-	z-index: 30;
 }
 
 .score {
@@ -113,6 +112,6 @@ body {
 	  transform: translateX(930px);
 	}
 	to {
-	  transform: translateX(160px);
+	  transform: translateX(180px);
 	}
     }

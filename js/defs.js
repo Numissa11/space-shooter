@@ -12,17 +12,17 @@ const GameSettings = {
             down: 40,
             space: 32
       },
-      targetFPS: 1000 / 140,
+      targetFPS: 1000 / 60,
       playerMoveStep: 8,
       score: 100,
 
-      bulletSpeed: 700 / 1000,
+      bulletSpeed: 800 / 1000,
       bulletLife: 4000,
-      bulletFireRate: 8000,
+      bulletFireRate: 5000,
       topCorner: 10,
 
       enemySpeed: 300 / 1000,
-      enemyLife: 4000,
+      enemyLife: 3000,
       enemyComingRate: 2000,
 
       playAreaWidth: 800,

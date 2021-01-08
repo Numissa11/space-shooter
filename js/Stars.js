@@ -6,15 +6,15 @@ function creatStars() {
       function addStar(type) {
         var div = document.createElement("div");
         div.classList.add("star", type);
-        div.style.top = random(100, 0) + "px";
+        div.style.top = random(590, 50) + "px";
         document.body.appendChild(div);
       }
       
       for(var i = 0; i < 10; ++i) {
-        var delay = i * 333;
+        var delay = i * 222;
         window.setTimeout(addStar, delay, "small");
-        window.setTimeout(addStar, delay + 333, "medium");
-        window.setTimeout(addStar, delay + 666, "big");
+        window.setTimeout(addStar, delay + 222, "medium");
+        window.setTimeout(addStar, delay + 444, "big");
       }
     }
 
