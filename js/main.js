@@ -5,7 +5,7 @@ function tick() {
     GameManager.bullets.update(dt);
     GameManager.enemies.updateEnemy(dt);
     GameManager.player.updatePlayer();
-
+    playSound('playingSong')
     let timer = setTimeout(tick, GameSettings.targetFPS);
 
     if (GameManager.player.dead == true) {
@@ -23,7 +23,7 @@ function showStart() {
         '<div class="menu">' + 'EXIT' + '</div>' +
         '</div>')
 
-        $('#' + GameSettings.playerDivName).css({ 'opacity': '1.0' })
+    $('#' + GameSettings.playerDivName).css({ 'opacity': '1.0' })
     setInterval(drawMatrix, 35);
 }
 
@@ -31,6 +31,8 @@ function endGameManager() {
     GameManager.player.dead = false;
     GameSettings.gameOver = true;
     GameManager.player.reset();
+    pauseSound('playingSong');
+    playSound('gameover');
     showGameOver();
 }
 
@@ -48,6 +50,8 @@ function endCountDown() {
 }
 
 function runCountDown() {
+    playSound('countdown');
+    pauseSound('introSong')
     killMatrix();
     clearMessages();
     writeMessage(3);
@@ -114,10 +118,9 @@ function resetGame() {
     resetPlayer();
     resetBullets();
     resetEnemy();
-
     GameManager.lastUpdated = Date.now();
     GameManager.elapsedTime = 0;
-
+    playSound('introSong')
 }
 
 function processAsset(indexNum) {
@@ -141,6 +144,7 @@ function processAsset(indexNum) {
 }
 
 $(function () {
+    initSounds();
     processAsset(0);
     $(document).keydown(
         function (e) {

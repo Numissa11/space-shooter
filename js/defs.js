@@ -1,17 +1,19 @@
 const ImageFiles = [
       'playerShip',
-      'Lasers/laserBlue',
-      'Enemy/enemyShip',
-      'Explosion/explosion00_s',
-      'Explosion/explosion01_s',
-      'Explosion/explosion02_s',
-      'Explosion/explosion03_s',
-      'Explosion/explosion04_s',
-      'Explosion/explosion05_s',
-      'Explosion/explosion06_s',
-      'Explosion/explosion07_s',
-      'Explosion/explosion08_s'
+      'laserBlue',
+      'enemyShip',
+     
 ];
+
+const soundFiles = [
+      'countdown',
+      'explosion',
+      'gameover',
+      'playingSong',
+      'introSong'
+  ];
+
+  const soundPath = 'assets/sounds/';
 
 const GameSettings = {
       keyPress: {
@@ -26,7 +28,7 @@ const GameSettings = {
       score: 100,
 
       bulletSpeed: 800 / 1000,
-      bulletLife: 4000,
+      bulletLife: 2000,
       bulletFireRate: 300,
       topCorner: 10,
 
@@ -44,7 +46,7 @@ const GameSettings = {
             y: 300
       },
 
-      countdownGap: 700,
+      countdownGap: 1000,
       countDownValues: ['2', '1', 'GO!'],
       gamoverTime: 2000,
       startTime: 2800,
@@ -56,6 +58,7 @@ let GameManager = {
       player: undefined,
       bullets: undefined,
       enemies: undefined,
+      sounds: {},
       elapsedTime: 0,
       lastUpdated: Date.now(),
       fps: 0

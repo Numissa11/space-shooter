@@ -20,7 +20,7 @@
         // positioning x,y of the particle on the circle (little randomized radius)
         var x = (explosion.width() /2 ) + rand(80, 150) * Math.cos(2 * Math.PI * i / rand(particles - 10, particles + 10)),
           y = (explosion.height() / 2) + rand(80, 150) * Math.sin(2 * Math.PI * i / rand(particles - 10, particles + 10)),
-          color = rand(230, 250) + ', ' + rand(80, 250) + ', ' + rand(0, 0), // randomize the color rgb
+          color = rand(230, 250) + ', ' + rand(120, 250) + ', ' + rand(0, 0), // randomize the color rgb
             // particle element creation (could be anything other than div)
           elm = $('<div class="particle" style="' +
             'background-color: rgb(' + color + ') ;' +

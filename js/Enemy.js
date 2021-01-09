@@ -62,9 +62,9 @@ class EnemyCollection {
 
       killAll() {
             for (let i = 0; i < this.listEnemy.length; ++i) {
-                this.listEnemy[i].killMe();
+                  this.listEnemy[i].killMe();
             }
-        }
+      }
 
       updateEnemy(dt) {
 
@@ -75,7 +75,7 @@ class EnemyCollection {
                   this.listEnemy.push(
                         new Enemy(
                               'enemy_' + this.total_enemy,
-                              GameManager.assets['Enemy/enemyShip'],
+                              GameManager.assets['enemyShip'],
                               new Point(GameSettings.playAreaWidth, Math.random() * (GameSettings.playAreaHeight - 100)),
                               new Rect(40, 40, GameSettings.playAreaWidth - 80, GameSettings.playAreaHeight - 80)
                         )
@@ -98,22 +98,19 @@ class EnemyCollection {
                               if (bu.dead == false &&
                                     bu.position.y > GameSettings.topCorner &&
                                     en.containingBox.IntersectedBy(bu.containingBox) == true) {
-
                                     en.dead = true;
                                     this.player.incrementScore(GameSettings.score);
                                     bu.killMe();
                                     en.killMe();
-
-                              
-                                    explode((en.position.x+400), en.position.y+40)
-
+                                    explode((en.position.x + 380 ), (en.position.y + 20))
+                                    playSound('explosion')
                               }
 
                         }
                         en.updateEnemy(dt);
                   }
 
-                 
+
 
             }
       }

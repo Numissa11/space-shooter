@@ -125,7 +125,7 @@ body {
 
     .explosion {
 	position: absolute; 
-	width: 600px;
+	width: 400px;
 	height: 600px;
 	pointer-events: none;
 }
@@ -135,7 +135,7 @@ body {
 	  width: 10px;
 	  height: 10px;
 	  border-radius: 50%;
-	  animation: pop 0.8s reverse forwards; 
+	  animation: pop 0.6s reverse forwards; 
 	  
     }
 
