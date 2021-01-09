@@ -20,8 +20,13 @@
    for(var x = 0; x < columns; x++)
        drops[x] = 1; 
 
-   //drawing the characters
-   function draw()
+
+    function killMatrix() {
+      $('#c').remove();
+     }
+
+        //drawing the characters
+   function drawMatrix()
    {
        //Black BG for the canvas
        //translucent BG to show trail, trasparent gradient
@@ -49,4 +54,7 @@
        }
    }
 
-   setInterval(draw, 35);
+  setInterval(drawMatrix, 85);
+     
+   
+

@@ -23,9 +23,8 @@ function showStart() {
         '<div class="menu">' + 'EXIT' + '</div>' +
         '</div>')
 
-    $('#' + GameSettings.playerDivName).css({ 'opacity': '1.0' })
-
-
+        $('#' + GameSettings.playerDivName).css({ 'opacity': '1.0' })
+    setInterval(drawMatrix, 35);
 }
 
 function endGameManager() {
@@ -36,7 +35,6 @@ function endGameManager() {
 }
 
 function showGameOver() {
-
     appendMessage('GAME OVER !');
     setTimeout(clearMessages, GameSettings.gamoverTime);
     setTimeout(showStart, GameSettings.startTime);
@@ -50,6 +48,7 @@ function endCountDown() {
 }
 
 function runCountDown() {
+    killMatrix();
     clearMessages();
     writeMessage(3);
     for (let i = 0; i < GameSettings.countDownValues.length; ++i) {

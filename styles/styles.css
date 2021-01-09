@@ -1,5 +1,4 @@
 body {
-	background-color: black;
 	font-family: Impact, Charcoal, sans-serif;
 	color: white;
 }
@@ -11,10 +10,11 @@ body {
 }
 
 #playArea {
+	background-color: black;
 	position: relative;
    	width: 800px;
 	height: 600px;
-	border: solid green 2px;
+	border: solid rgb(5, 221, 5) 5px;
 	overflow: hidden;
 }
 
@@ -58,7 +58,7 @@ body {
 }
 
 .menu:hover {
-	color: green;
+	color:rgb(5, 221, 5);
 }
 
 .game {
@@ -69,7 +69,7 @@ body {
 }
 
 .game:hover {
-	color:green;
+	color:rgb(3, 163, 3);
 }
 
 /*---------------------stars--------------------*/
@@ -89,7 +89,6 @@ body {
 	width: 3px;
 	height: 3px;
 	animation-duration: 5s;  
-	background-color: gray;
     }
     
     .medium {
@@ -109,10 +108,10 @@ body {
     
     @keyframes moveX {
 	from {
-	  transform: translateX(930px);
+	  transform: translateX(1500px);
 	}
 	to {
-	  transform: translateX(180px);
+	  transform: translateX(200px);
 	}
     }
 
