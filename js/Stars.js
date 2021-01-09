@@ -6,7 +6,7 @@ function creatStars() {
       function addStar(type) {
         var div = document.createElement("div");
         div.classList.add("star", type);
-        div.style.top = random(590, 50) + "px";
+        div.style.top = random(600, 50) + "px";
         document.body.appendChild(div);
       }
       
