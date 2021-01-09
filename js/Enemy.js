@@ -104,11 +104,8 @@ class EnemyCollection {
                                     bu.killMe();
                                     en.killMe();
 
-                                    console.log('bu.position.y',bu.position.y);
-                                    console.log('bu.position.x',bu.position.x);
-                                     console.log('en.position.y',en.position.y);
-                                    console.log('en.position.x',en.position.x);
-                                    explode((en.position.x+120), en.position.y)
+                              
+                                    explode((en.position.x+400), en.position.y+40)
 
                               }
 
