@@ -123,25 +123,41 @@ body {
 
     /*------------ explosion ---------*/
 
-
-@keyframes explosion {
-	0%   {background-image: url("../assets/Explosion/explosion00_s.png");}
-	20%   {background-image: url("../assets/Explosion/explosion01_s.png"); }
-	40%   {background-image: url("../assets/Explosion/explosion02_s.png");}
-	60%   {background-image: url("../assets/Explosion/explosion03_s.png");opacity: 0.9;}
-	80%   {background-image: url("../assets/Explosion/explosion04_s.png");opacity: 0.8;}
-	100%   {background-image: url("../assets/Explosion/explosion05_s.png");opacity: 0.5;}
+    .explosion {
+	position: absolute; 
+	width: 600px;
+	height: 600px;
+	pointer-events: none;
 }
+	
+	.particle {
+	  position: absolute; 
+	  width: 10px;
+	  height: 10px;
+	  border-radius: 50%;
+	  animation: pop 0.8s reverse forwards; 
+	  
+    }
 
-.explosion {
-	width: 100px;
-	height: 100px;
+    @keyframes pop {
+	from {
+	  opacity: 0;
+	}
+	to {
+	  top: 50%;
+	  left: 50%;
+	  opacity: 1;
+	}
+    }
+  
+    h1 {
 	position: absolute;
-	left: 500px;
-	top: 300px;
-	animation-name: explosion;
-	animation-duration: 2.0s;
-	background-repeat: no-repeat;
-	z-index: 20;
-}
-
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -100%);
+	color: #CCC;
+	user-select: none;
+	-webkit-touch-callout: none; /* iOS Safari */
+	-webkit-user-select: none;   /* Chrome/Safari/Opera */
+	-moz-user-select: none;      /* Firefox */
+    }
