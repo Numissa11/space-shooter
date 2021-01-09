@@ -1,7 +1,16 @@
 const ImageFiles = [
       'playerShip',
       'Lasers/laserBlue',
-      'Enemy/enemyShip'
+      'Enemy/enemyShip',
+      'Explosion/explosion00_s',
+      'Explosion/explosion01_s',
+      'Explosion/explosion02_s',
+      'Explosion/explosion03_s',
+      'Explosion/explosion04_s',
+      'Explosion/explosion05_s',
+      'Explosion/explosion06_s',
+      'Explosion/explosion07_s',
+      'Explosion/explosion08_s'
 ];
 
 const GameSettings = {
@@ -34,7 +43,7 @@ const GameSettings = {
             x: 45,
             y: 300
       },
-          
+
       countdownGap: 700,
       countDownValues: ['2', '1', 'GO!'],
       gamoverTime: 2000,
