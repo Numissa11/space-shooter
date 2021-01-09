@@ -115,3 +115,9 @@ body {
 	  transform: translateX(180px);
 	}
     }
+
+    /* ---------- matrix -------------*/
+
+    canvas {
+	    display: block;
+    }
