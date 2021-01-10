@@ -1,13 +1,12 @@
 # space-shooter
 
 Description
-Create a browser game with JavaScript or TypeScript, without using any third-party game
-frameworks (i.e. Unity, Phaser, Construct, RPG Maker, etc.). The only exception is PixiJS which is
-recommended, but not mandatory.
+This a space-shooter, browser game with JavaScript.
+
 Specification
-• the game should work on most modern browsers on desktop
-• the game should be 800x600 px in size, it is not necessary to handle resizing
-• at the start, a Splash screen is shown for 2 seconds, then fades out and the game continues
+• the game works on most modern browsers on desktop
+• the gamei is 800x600 px in size
+• at the start, a Splash screen is shown for 4 seconds, then fades out and the game continues
 to the main screen
 •
 the Main screen contains the following elements:
