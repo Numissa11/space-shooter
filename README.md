@@ -7,7 +7,7 @@ Specification
 
 • the game works on most modern browsers on desktop
 • the gamei is 800x600 px in size
-• at the start, a Splash screen is shown for 4 seconds, then fades out and the game continues
+• at the start, a Splash screen is shown for 2 seconds, then fades out and the game continues
 to the main screen
 
 •the Main screen contains the following elements:
