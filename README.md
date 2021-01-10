@@ -10,7 +10,6 @@ Specification
 • at the start, a Splash screen is shown for 4 seconds, then fades out and the game continues
 to the main screen
 
-
 •the Main screen contains the following elements:
 • background with some animation to make the view more interesting
 • There are 4 buttons placed in the middle, from top to bottom:
@@ -20,6 +19,7 @@ GAME1, GAME2, GAME3 and EXIT
 
 The Game itself:
 
+• there is a score and a high score at the left corner of the game.
 •the Game screen is a simple side scroller Shoot’em up with spaceships
 • the player’s spaceship can move around the game area and it can shoot rockets
 
