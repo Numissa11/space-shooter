@@ -1,4 +1,5 @@
-class Rect {
+      /*---------- class used for delimiting rectangle limit  ----------*/
+      class Rect {
     constructor(x, y, width, height) {
         this.origin = new Point(x, y);
         this.size = new Size(width, height);
@@ -15,6 +16,7 @@ class Rect {
     shift(x, y) {
         this.update(this.origin.x + x, this.origin.y + y);
     }
+      /*---------- check if outside vertical or horizontal of rectangle limit   ----------*/
 
     OutsideHorizontal(x) {
         if (x < this.origin.x || x > this.max.x) {
@@ -31,6 +33,7 @@ class Rect {
             return false;
         }
     }
+      /*---------- check if 2 rectangles share the same position   ----------*/
 
     IntersectedBy(rect) {
         if (this.origin.x > rect.max.x || rect.origin.x > this.max.x) {

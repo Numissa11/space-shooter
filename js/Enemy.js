@@ -1,3 +1,5 @@
+/*----------  Enemy class that herit fro Sprite class  ----------*/
+
 class Enemy extends Sprite {
       constructor(divName, assetDesc, position, boundaryRect) {
             super(divName, position, assetDesc.fileName, new Size(assetDesc.width, assetDesc.height));
@@ -7,7 +9,7 @@ class Enemy extends Sprite {
             this.boundaryRect.shift(this.anchorShift.x, this.anchorShift.y);
             this.addToBoard(true);
       }
-
+      /*----------  increment enemy position if still alive  ----------*/
 
       updateEnemy(dt) {
             let inc = dt * GameSettings.enemySpeed;
@@ -19,6 +21,7 @@ class Enemy extends Sprite {
             if (this.life < 0) {
                   this.killMe();
             }
+            /*----------  enemy cannot go out of the play Area  ----------*/
 
             if (this.boundaryRect.OutsideVertical(this.position.y) == true) {
 
@@ -33,14 +36,15 @@ class Enemy extends Sprite {
 
             }
       }
-
-
+      /*----------  enemy removed from board if hit by bullet or dead  ----------*/
       killMe() {
             this.dead = true;
             this.removeFromBoard();
       }
 
 }
+
+/*----------  enemies array created with EnemyCollection class  ----------*/
 
 class EnemyCollection {
       constructor(player, bullets) {
@@ -50,7 +54,7 @@ class EnemyCollection {
             this.player = player;
             this.bullets = bullets;
       }
-
+      /*----------  reset all enemies info ----------*/
       reset() {
             for (let i = 0; i < this.listEnemy.length; ++i) {
                   this.listEnemy[i].removeFromBoard();
@@ -59,16 +63,14 @@ class EnemyCollection {
             this.lastAdded = 0;
             this.total_enemy = 0;
       }
-
+      /*----------  remove all enemies from board  ----------*/
       killAll() {
             for (let i = 0; i < this.listEnemy.length; ++i) {
                   this.listEnemy[i].killMe();
             }
       }
-
+      /*----------  create enemy every 2sec (call enemy class) ----------*/
       updateEnemy(dt) {
-
-            this.lastAdded += dt;
 
             if (this.lastAdded > GameSettings.enemyComingRate) {
                   this.lastAdded = 0;
@@ -83,18 +85,19 @@ class EnemyCollection {
                   this.total_enemy++;
             }
 
+            /*----------  collision between bullet and enemy  ----------*/
 
             for (let i = this.listEnemy.length - 1; i >= 0; --i) {
-
+                  /*----------  if enemy is dead remove from array  ----------*/
                   if (this.listEnemy[i].dead == true) {
                         this.listEnemy.splice(i, 1);
 
+                        /*----------  if enemy & bullets alive :check if they share rectangle position ----------*/
                   } else if (this.listEnemy[i].dead == false) {
                         let en = this.listEnemy[i];
-
                         for (let b = 0; b < this.bullets.listBullets.length; ++b) {
                               let bu = this.bullets.listBullets[b];
-
+                              /*----------  remove from board and explosion  ----------*/
                               if (bu.dead == false &&
                                     bu.position.y > GameSettings.topCorner &&
                                     en.containingBox.IntersectedBy(bu.containingBox) == true) {
@@ -102,17 +105,15 @@ class EnemyCollection {
                                     this.player.incrementScore(GameSettings.score);
                                     bu.killMe();
                                     en.killMe();
-                                    explode((en.position.x + 380 ), (en.position.y + 20))
+                                    explode((en.position.x + 380), (en.position.y + 20))
                                     playSound('explosion')
                               }
 
                         }
                         en.updateEnemy(dt);
                   }
-
-
-
             }
+            this.lastAdded += dt;
       }
 }
 

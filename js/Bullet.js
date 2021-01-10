@@ -1,3 +1,5 @@
+/*---------- bullet class that herit fro Sprite class ----------*/
+
 class Bullet extends Sprite {
     constructor(divName, assetDesc, position) {
         super(divName, position, assetDesc.fileName, new Size(assetDesc.width, assetDesc.height));
@@ -5,6 +7,8 @@ class Bullet extends Sprite {
         this.dead = false;
         this.addToBoard(true);
     }
+
+    /*---------- update position of the bullet or remove it from board if dead ----------*/
 
     update(dt) {
         let inc = dt * GameSettings.bulletSpeed;
@@ -21,6 +25,8 @@ class Bullet extends Sprite {
     }
 }
 
+/*----------  bullet array created with BulletCollection class  ----------*/
+
 class BulletCollection {
     constructor(player, enemies) {
         this.listBullets = [];
@@ -29,6 +35,7 @@ class BulletCollection {
         this.total_bullets = 0;
         this.enemies = enemies;
     }
+    /*----------  reset all bullets info ----------*/
 
     reset() {
         for (let i = 0; i < this.listBullets.length; ++i) {
@@ -38,12 +45,15 @@ class BulletCollection {
         this.lastAdded = 0;
         this.total_bullets = 0;
     }
+    /*----------  remove all bullets from board  ----------*/
 
     killAll() {
         for (let i = 0; i < this.listBullets.length; ++i) {
             this.listBullets[i].killMe();
         }
     }
+
+    /*----------  create bullet every 300milisec (call bullet class) ----------*/
     update(dt) {
 
         for (let i = this.listBullets.length - 1; i >= 0; --i) {
@@ -54,7 +64,6 @@ class BulletCollection {
             }
         }
         this.lastAdded += dt;
-
         if (this.lastAdded > GameSettings.bulletFireRate) {
             this.lastAdded = 0;
             this.listBullets.push(

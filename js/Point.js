@@ -1,3 +1,5 @@
+/*---------- Point class : update and increment position ----------*/
+
 class Point {
       constructor(x, y) {
             this.x = x;
@@ -5,8 +7,8 @@ class Point {
       }
 
       update(x, y) {
-           this.x = x;
-           this.y = y;  
+            this.x = x;
+            this.y = y;
       }
 
       increment(ix, iy) {

@@ -5,7 +5,7 @@ const ImageFiles = [
       'playerShip',
       'laserBlue',
       'enemyShip',
-     
+
 ];
 
 const soundFiles = [
@@ -13,7 +13,7 @@ const soundFiles = [
       'explosion',
       'gameover',
       'playingSong',
-  ];
+];
 
 const soundPath = 'assets/sounds/';
 
@@ -28,26 +28,26 @@ const GameSettings = {
       targetFPS: 1000 / 60,
       playerMoveStep: 8,
       score: 100,
-/*----------  bullets  ----------*/
+      /*----------  bullets  ----------*/
       bulletSpeed: 800 / 1000,
       bulletLife: 2000,
       bulletFireRate: 300,
       topCorner: 10,
-/*----------  enemy  ----------*/
+      /*----------  enemy  ----------*/
       enemySpeed: 300 / 1000,
       enemyLife: 5000,
       enemyComingRate: 2000,
-/*----------  play Area  ----------*/
+      /*----------  play Area  ----------*/
       playAreaWidth: 800,
       playAreaHeight: 600,
       playAreaDiv: '#playArea',
-/*----------  player  ----------*/
+      /*----------  player  ----------*/
       playerDivName: 'playerSprite',
       playerStart: {
             x: 45,
             y: 300
       },
-/*----------  Time  ----------*/
+      /*----------  Time  ----------*/
       countdownGap: 1000,
       countDownValues: ['2', '1', 'GO!'],
       gamoverTime: 2000,

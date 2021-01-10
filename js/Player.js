@@ -1,3 +1,5 @@
+/*----------  Player class that herit fro Sprite class  ----------*/
+
 class Player extends Sprite {
     constructor(divName, position, assetDesc, boundaryRect) {
         super(divName, position, assetDesc.fileName,
@@ -10,6 +12,7 @@ class Player extends Sprite {
         this.boundaryRect = boundaryRect;
         this.boundaryRect.shift(this.anchorShift.x, this.anchorShift.y);
     }
+/*----------  reset player score position and highscore id needed  ----------*/
 
     reset() {
         this.score = 0;
@@ -17,6 +20,8 @@ class Player extends Sprite {
         this.setHighScore();
         this.setPosition(GameSettings.playerStart.x, GameSettings.playerStart.y, true);
     }
+
+/*---------- Move player and check it never goes beyond rectangle limit  ----------*/
 
     move(x, y) {
         let xStep = GameSettings.playerMoveStep * x;
@@ -32,6 +37,8 @@ class Player extends Sprite {
         this.incrementPosition(xStep, yStep);
 
     }
+/*----------  update player position ----------*/
+
 
     updatePlayer () {
         let maListeEnemy = GameManager.enemies.listEnemy;
@@ -39,7 +46,7 @@ class Player extends Sprite {
         for (let i = maListeEnemy.length - 1; i >= 0; --i) {
             let enemySolo = maListeEnemy[i];
             let playerSolo = GameManager.player;
-
+/*---------- when player meet enemy he dies and everything is removed from board except him ----------*/
             if (enemySolo.dead == false &&
                 enemySolo.position.y > GameSettings.topCorner &&
                 playerSolo.containingBox.IntersectedBy(enemySolo.containingBox) == true
@@ -53,6 +60,7 @@ class Player extends Sprite {
 
         }
     }
+/*---------- score manager: increment, set or set highscore ----------*/
 
     incrementScore(amount) {
         this.score += amount;
