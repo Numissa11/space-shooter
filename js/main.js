@@ -20,11 +20,13 @@ function showStart() {
         '<button class="game" onclick="runCountDown()">' + 'GAME 1' + '</button>' +
         '<button class="game" onclick="runCountDown()">' + 'GAME 2' + '</button>' +
         '<button class="game" onclick="runCountDown()">' + 'GAME 3' + '</button>' +
-        '<a href="https://cat-bounce.com/" class="menu">' + 'EXIT' + '</a>' +
+        '<div href="https://cat-bounce.com/" class="menu">' + 'EXIT' + '</div>' +
         '</div>')
 
     $('#' + GameSettings.playerDivName).css({ 'opacity': '1.0' })
     setInterval(drawMatrix, 35);
+    playSound('introSong')
+
 }
 
 function endGameManager() {
@@ -120,7 +122,6 @@ function resetGame() {
     resetEnemy();
     GameManager.lastUpdated = Date.now();
     GameManager.elapsedTime = 0;
-    playSound('introSong')
 }
 
 function processAsset(indexNum) {
@@ -137,7 +138,6 @@ function processAsset(indexNum) {
         if (indexNum < ImageFiles.length) {
             processAsset(indexNum);
         } else {
-            console.log('Assets Done:', GameManager.assets);
             resetGame();
         }
     }

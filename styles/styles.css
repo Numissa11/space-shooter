@@ -2,8 +2,6 @@
 body {
 	font-family: 'Big Shoulders Stencil Text', cursive;
 	color: white;
-	padding: 0;
-	margin: 0;
 }
 
 #playWindow {
@@ -58,6 +56,7 @@ body {
 
 .menu {
 	font-size: 2.5em;
+	cursor: pointer;
 }
 
 .menu:hover {
@@ -70,6 +69,7 @@ body {
 	padding: 12px;
 	margin-bottom: 1.8em;
 	font-family: 'Big Shoulders Stencil Text', cursive;
+	cursor: pointer;
 }
 
 .game:hover {
