@@ -1,3 +1,6 @@
+/*----------  Game Parameters  ----------*/
+
+/*----------  assets  ----------*/
 const ImageFiles = [
       'playerShip',
       'laserBlue',
@@ -10,10 +13,9 @@ const soundFiles = [
       'explosion',
       'gameover',
       'playingSong',
-      'introSong'
   ];
 
-  const soundPath = 'assets/sounds/';
+const soundPath = 'assets/sounds/';
 
 const GameSettings = {
       keyPress: {
@@ -26,33 +28,33 @@ const GameSettings = {
       targetFPS: 1000 / 60,
       playerMoveStep: 8,
       score: 100,
-
+/*----------  bullets  ----------*/
       bulletSpeed: 800 / 1000,
       bulletLife: 2000,
       bulletFireRate: 300,
       topCorner: 10,
-
+/*----------  enemy  ----------*/
       enemySpeed: 300 / 1000,
       enemyLife: 5000,
       enemyComingRate: 2000,
-
+/*----------  play Area  ----------*/
       playAreaWidth: 800,
       playAreaHeight: 600,
       playAreaDiv: '#playArea',
-
+/*----------  player  ----------*/
       playerDivName: 'playerSprite',
       playerStart: {
             x: 45,
             y: 300
       },
-
+/*----------  Time  ----------*/
       countdownGap: 1000,
       countDownValues: ['2', '1', 'GO!'],
       gamoverTime: 2000,
       startTime: 2800,
       gameOver: false
 };
-
+/*---------- Game objects  ----------*/
 let GameManager = {
       assets: {},
       player: undefined,

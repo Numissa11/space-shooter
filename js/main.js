@@ -1,3 +1,5 @@
+/*----------  fonction that update every FPS  ----------*/
+
 function tick() {
     let now = Date.now();
     let dt = now - GameManager.lastUpdated;
@@ -7,13 +9,14 @@ function tick() {
     GameManager.player.updatePlayer();
     playSound('playingSong')
     let timer = setTimeout(tick, GameSettings.targetFPS);
-
+    /*----------  stop tick from updating and manage the end  ----------*/
     if (GameManager.player.dead == true) {
         clearTimeout(timer);
         removeStars();
         endGameManager();
     }
 }
+/*----------  menu that appears with Jquery divs + Matrix background ----------*/
 
 function showStart() {
     $("#messageContainer").append('<div id="messageContainer">' +
@@ -30,6 +33,8 @@ function showStart() {
     setInterval(drawMatrix, 35);
    }
 
+/*---------- Manage the game functions   ----------*/
+
 function endGameManager() {
     GameManager.player.dead = false;
     GameSettings.gameOver = true;
@@ -39,11 +44,15 @@ function endGameManager() {
     showGameOver();
 }
 
+/*----------  show game over function  ----------*/
+
 function showGameOver() {
     appendMessage('GAME OVER !');
     setTimeout(clearMessages, GameSettings.gamoverTime);
     setTimeout(showStart, GameSettings.startTime);
 }
+
+/*----------  game starting after the countdown  ----------*/
 
 function endCountDown() {
     creatStars();
@@ -51,6 +60,8 @@ function endCountDown() {
     GameManager.lastUpdated = Date.now();
     setTimeout(tick, GameSettings.targetFPS);
 }
+
+/*----------  countdown starting   ----------*/
 
 function runCountDown() {
     playSound('countdown');
@@ -65,6 +76,8 @@ function runCountDown() {
         (GameSettings.countDownValues.length + 1) * GameSettings.countdownGap);
 }
 
+/*----------  message/div manager with jquery ----------*/
+
 function writeMessage(text) {
     clearMessages();
     appendMessage(text);
@@ -77,9 +90,9 @@ function appendMessage(text) {
 function clearMessages() {
     $('#messageContainer').empty();
     $('.mini-monster').empty();
-
 }
 
+/*---------- reset the Player, Bullets, Enemy, Game   ----------*/
 
 function resetPlayer() {
     if (GameManager.player == undefined) {
@@ -94,7 +107,6 @@ function resetPlayer() {
     }
     GameManager.player.reset();
 }
-
 
 function resetBullets() {
     if (GameManager.bullets != undefined) {
@@ -124,6 +136,7 @@ function resetGame() {
     GameManager.lastUpdated = Date.now();
     GameManager.elapsedTime = 0;
 }
+/*----------  process the images  ----------*/
 
 function processAsset(indexNum) {
     let img = new Image();
@@ -143,6 +156,8 @@ function processAsset(indexNum) {
         }
     }
 }
+
+/*----------  key press manager and init assets  ----------*/
 
 $(function () {
     initSounds();

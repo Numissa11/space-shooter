@@ -20,7 +20,7 @@
    for(var x = 0; x < columns; x++)
        drops[x] = 1; 
 
-
+// stop draw function so Matrix background stops
     function killMatrix() {
       $('#c').remove();
      }
