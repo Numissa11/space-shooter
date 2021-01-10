@@ -17,10 +17,10 @@ function tick() {
 
 function showStart() {
     $("#messageContainer").append('<div id="messageContainer">' +
-        '<button class="game" onclick="runCountDown()">' + 'GAME1' + '</button>' +
-        '<button class="game" onclick="runCountDown()">' + 'GAME2' + '</button>' +
-        '<button class="game" onclick="runCountDown()">' + 'GAME3' + '</button>' +
-        '<div class="menu">' + 'EXIT' + '</div>' +
+        '<button class="game" onclick="runCountDown()">' + 'GAME 1' + '</button>' +
+        '<button class="game" onclick="runCountDown()">' + 'GAME 2' + '</button>' +
+        '<button class="game" onclick="runCountDown()">' + 'GAME 3' + '</button>' +
+        '<a href="https://cat-bounce.com/" class="menu">' + 'EXIT' + '</a>' +
         '</div>')
 
     $('#' + GameSettings.playerDivName).css({ 'opacity': '1.0' })

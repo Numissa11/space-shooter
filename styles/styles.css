@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text&display=swap');
 body {
-	font-family: Impact, Charcoal, sans-serif;
+	font-family: 'Big Shoulders Stencil Text', cursive;
 	color: white;
+	padding: 0;
+	margin: 0;
 }
 
 #playWindow {
@@ -41,7 +44,7 @@ body {
 	align-items: center;
 	flex-direction: column;
 	position: absolute;
-	top: 50px;
+	top: 35px;
 	text-align: center;
 	width: 100%;
 	z-index: 40;
@@ -62,10 +65,11 @@ body {
 }
 
 .game {
-	font-size: 1.5em;
+	font-size: 1.8em;
 	border-radius: 98%;
 	padding: 12px;
 	margin-bottom: 1.8em;
+	font-family: 'Big Shoulders Stencil Text', cursive;
 }
 
 .game:hover {
