@@ -64,16 +64,21 @@ body {
 }
 
 .game {
-	font-size: 1.8em;
+	font-size: 1.5em;
 	border-radius: 98%;
 	padding: 12px;
-	margin-bottom: 1.8em;
+	margin-bottom: 1em;
 	font-family: 'Big Shoulders Stencil Text', cursive;
 	cursor: pointer;
 }
 
 .game:hover {
 	color:rgb(3, 163, 3);
+}
+
+.mini-monster {
+	height: 40px;
+	width: 40px;
 }
 
 /*---------------------stars--------------------*/
@@ -131,7 +136,6 @@ body {
 	position: absolute; 
 	width: 400px;
 	height: 600px;
-	pointer-events: none;
 }
 	
 	.particle {
@@ -182,7 +186,7 @@ body {
 	justify-content: center;
 	animation-name: open;
 	animation-duration: 2s;
-	animation-delay: 3.5s;
+	animation-delay: 2.4s;
 	animation-fill-mode: forwards;
 	z-index: 50;
 	}
@@ -206,7 +210,7 @@ body {
 	z-index: 99;
 	animation-name: open;
 	animation-fill-mode: forwards;
-	animation-duration: 2s;
+	animation-duration: 1.2s;
   }
   .splash::after{
 	left: 30vw;
@@ -214,7 +218,7 @@ body {
   }
   .splash::before{
 	left: 0;
-	animation-delay: 2s;
+	animation-delay: 1.2s;
   }
   @keyframes open{
 	0%{

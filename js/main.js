@@ -17,8 +17,11 @@ function tick() {
 
 function showStart() {
     $("#messageContainer").append('<div id="messageContainer">' +
+    '<img class="mini-monster" src="./assets/logo.png" alt="space invader"></img>' +
         '<button class="game" onclick="runCountDown()">' + 'GAME 1' + '</button>' +
+       '<img class="mini-monster" src="./assets/logo.png" alt="space invader"></img>' +
         '<button class="game" onclick="runCountDown()">' + 'GAME 2' + '</button>' +
+        '<img class="mini-monster" src="./assets/logo.png" alt="space invader"></img>' +
         '<button class="game" onclick="runCountDown()">' + 'GAME 3' + '</button>' +
         '<div href="https://cat-bounce.com/" class="menu">' + 'EXIT' + '</div>' +
         '</div>')
@@ -73,6 +76,7 @@ function appendMessage(text) {
 
 function clearMessages() {
     $('#messageContainer').empty();
+    $('.mini-monster').empty();
 
 }
 
