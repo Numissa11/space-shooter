@@ -25,9 +25,7 @@ function showStart() {
 
     $('#' + GameSettings.playerDivName).css({ 'opacity': '1.0' })
     setInterval(drawMatrix, 35);
-    playSound('introSong')
-
-}
+   }
 
 function endGameManager() {
     GameManager.player.dead = false;
@@ -53,7 +51,6 @@ function endCountDown() {
 
 function runCountDown() {
     playSound('countdown');
-    pauseSound('introSong')
     killMatrix();
     clearMessages();
     writeMessage(3);

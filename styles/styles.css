@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text&display=swap');
 body {
 	font-family: 'Big Shoulders Stencil Text', cursive;
-	color: white;
+	color: rgb(129, 239, 96)
 }
 
 #playWindow {
@@ -165,3 +165,62 @@ body {
 	-webkit-user-select: none;   /* Chrome/Safari/Opera */
 	-moz-user-select: none;      /* Firefox */
     }
+
+
+    /* --------------- splash screen --------------*/
+
+    .splash{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(32, 47, 30);
+	font-size: 5em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation-name: open;
+	animation-duration: 2s;
+	animation-delay: 3.5s;
+	animation-fill-mode: forwards;
+	z-index: 50;
+	}
+
+  .splash .img{
+	height: 82px;
+	width: 82px;
+	margin-right:0.5em;
+	  }
+
+.imageContainer {
+	max-width: 700px;
+}
+
+.splash::after, .splash::before{
+	content: "";
+	position: absolute;
+	background-color: rgb(127, 199, 105);
+	height: 100vh;
+	width: 30vw;
+	z-index: 99;
+	animation-name: open;
+	animation-fill-mode: forwards;
+	animation-duration: 2s;
+  }
+  .splash::after{
+	left: 30vw;
+	animation-delay: 200ms;
+  }
+  .splash::before{
+	left: 0;
+	animation-delay: 2s;
+  }
+  @keyframes open{
+	0%{
+	    transform: translate(0, 0);
+	}
+	100%{
+	    transform: translate(100%, 0);
+	}
+  }
