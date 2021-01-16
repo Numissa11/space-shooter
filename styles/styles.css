@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text&display=swap');
+
 body {
 	font-family: 'Big Shoulders Stencil Text', cursive;
 	color: rgb(129, 239, 96)
 }
+
 
 /*--------------- play area -------------*/
 
@@ -10,6 +12,7 @@ body {
 	position: relative;
 	display: flex;
 	justify-content: center;
+	background-color: white;
 }
 
 #playArea {
@@ -161,20 +164,10 @@ body {
 	}
     }
   
-    h1 {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -100%);
-	color: #CCC;
-	user-select: none;
-	-webkit-touch-callout: none; /* iOS Safari */
-	-webkit-user-select: none;   /* Chrome/Safari/Opera */
-	-moz-user-select: none;      /* Firefox */
-    }
+ 
 
 
-    /* --------------- splash screen --------------*/
+    /* --------------- splash screen -------------- */
 
     .splash{
 	position: fixed;
@@ -188,7 +181,7 @@ body {
 	align-items: center;
 	justify-content: center;
 	animation-name: open;
-	animation-duration: 2s;
+	animation-duration: 2.4s;
 	animation-delay: 2.4s;
 	animation-fill-mode: forwards;
 	z-index: 50;
@@ -231,3 +224,23 @@ body {
 	    transform: translate(100%, 0);
 	}
   }
+
+  */
+
+  /* ------------ Chuk Noris Joke Generator ----------*/
+
+  .wrapper{
+	background-color:white;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+    }
+    .quotebox{
+	font-weight: 600;
+	border-radius: 50%;
+	background-color:white;
+	width: 20rem;
+	color: rgb(3, 163, 3);
+	padding: 1rem;
+	margin-top: 1rem;
+    }

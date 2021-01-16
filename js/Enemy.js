@@ -105,7 +105,7 @@ class EnemyCollection {
                                     this.player.incrementScore(GameSettings.score);
                                     bu.killMe();
                                     en.killMe();
-                                    explode((en.position.x + 380), (en.position.y + 20))
+                                    explode((en.position.x), (en.position.y))
                                     playSound('explosion')
                               }
 

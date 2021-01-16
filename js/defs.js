@@ -4,8 +4,7 @@
 const ImageFiles = [
       'playerShip',
       'laserBlue',
-      'enemyShip',
-
+      'enemyShip'
 ];
 
 const soundFiles = [
@@ -26,7 +25,7 @@ const GameSettings = {
             space: 32
       },
       targetFPS: 1000 / 60,
-      playerMoveStep: 8,
+      playerMoveStep: 15,
       score: 100,
       /*----------  bullets  ----------*/
       bulletSpeed: 800 / 1000,
@@ -52,7 +51,8 @@ const GameSettings = {
       countDownValues: ['2', '1', 'GO!'],
       gamoverTime: 2000,
       startTime: 2800,
-      gameOver: false
+      gameOver: false,
+      matrixOn: true
 };
 /*---------- Game objects  ----------*/
 let GameManager = {
