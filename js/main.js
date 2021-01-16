@@ -7,7 +7,7 @@ function tick() {
     GameManager.bullets.update(dt);
     GameManager.enemies.updateEnemy(dt);
     GameManager.player.updatePlayer();
-    playSound('playingSong')
+    // playSound('playingSong')
     let timer = setTimeout(tick, GameSettings.targetFPS);
     /*----------  stop tick from updating and manage the end  ----------*/
     if (GameManager.player.dead == true) {
@@ -19,19 +19,19 @@ function tick() {
 /*----------  menu that appears with Jquery divs + Matrix background ----------*/
 
 function showStart() {
+
     $("#messageContainer").append('<div id="messageContainer">' +
-    '<img class="mini-monster" src="./assets/logo.png" alt="space invader"></img>' +
+        '<img class="mini-monster" src="./assets/logo.png" alt="space invader"></img>' +
         '<button class="game" onclick="runCountDown()">' + 'GAME 1' + '</button>' +
-       '<img class="mini-monster" src="./assets/logo.png" alt="space invader"></img>' +
+        '<img class="mini-monster" src="./assets/logo.png" alt="space invader"></img>' +
         '<button class="game" onclick="runCountDown()">' + 'GAME 2' + '</button>' +
         '<img class="mini-monster" src="./assets/logo.png" alt="space invader"></img>' +
         '<button class="game" onclick="runCountDown()">' + 'GAME 3' + '</button>' +
-        '<div href="https://cat-bounce.com/" class="menu">' + 'EXIT' + '</div>' +
+        '<div onclick="colorSelector()" class="menu">' + 'EXIT' + '</div>' +
         '</div>')
 
     $('#' + GameSettings.playerDivName).css({ 'opacity': '1.0' })
-    setInterval(drawMatrix, 35);
-   }
+}
 
 /*---------- Manage the game functions   ----------*/
 
@@ -47,6 +47,7 @@ function endGameManager() {
 /*----------  show game over function  ----------*/
 
 function showGameOver() {
+    GameSettings.matrixOn = true;
     appendMessage('GAME OVER !');
     setTimeout(clearMessages, GameSettings.gamoverTime);
     setTimeout(showStart, GameSettings.startTime);
@@ -64,8 +65,10 @@ function endCountDown() {
 /*----------  countdown starting   ----------*/
 
 function runCountDown() {
+    GameSettings.matrixOn = false;
+    GameSettings.gameOver = false;
+    white();
     playSound('countdown');
-    killMatrix();
     clearMessages();
     writeMessage(3);
     for (let i = 0; i < GameSettings.countDownValues.length; ++i) {
@@ -125,10 +128,10 @@ function resetEnemy() {
 }
 
 function resetGame() {
-
     if (GameSettings.gameOver == false) {
         showStart();
         pauseStars();
+        setInterval(drawMatrix, 35);
     }
     resetPlayer();
     resetBullets();
