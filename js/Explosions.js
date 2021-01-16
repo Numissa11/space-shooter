@@ -6,7 +6,7 @@
         explosion = $('<div class="explosion"></div>');
     
       /* ----put the explosion container into the body to be able to get it's size ----*/
-      $('#window').append(explosion);
+      $('#playArea').append(explosion);
     
       /*---- position the container to be centered on click----*/
       explosion.css('left', x - explosion.width() / 2);
