@@ -21,16 +21,16 @@ class Player extends Sprite {
         this.setPosition(GameSettings.playerStart.x, GameSettings.playerStart.y, true);
     }
 
-/*---------- Move player and check it never goes beyond rectangle limit  ----------*/
+/*---------- Move player and check it never goes beyond rectangle limit or move when GameOver ----------*/
 
     move(x, y) {
         let xStep = GameSettings.playerMoveStep * x;
         let yStep = GameSettings.playerMoveStep * y;
 
-        if (this.boundaryRect.OutsideHorizontal(xStep + this.position.x) == true) {
+        if (this.boundaryRect.OutsideHorizontal(xStep + this.position.x) == true || GameSettings.gameOver == true) {
             xStep = 0;
         }
-        if (this.boundaryRect.OutsideVertical(yStep + this.position.y) == true) {
+        if (this.boundaryRect.OutsideVertical(yStep + this.position.y) == true || GameSettings.gameOver == true) {
             yStep = 0;
         }
 
