@@ -25,8 +25,8 @@
        ctx.fillStyle = "rgba(0, 0, 0, 0.04";         
        ctx.fillRect(0, 0, c.width, c.height);          
 
-       ctx.fillStyle = "#000"; 
-
+       ctx.fillStyle = GameSettings.matrixOn == true? "#0F0":"#000"; 
+       
        ctx.font = font_size + "px arial";
        /*----looping over drops ----*/
        for(let i = 0; i < drops.length; i++)
