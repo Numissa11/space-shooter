@@ -8,7 +8,7 @@
       /* ----put the explosion container into the body to be able to get it's size ----*/
       $('#playArea').append(explosion);
     
-      /*---- position the container to be centered on click----*/
+      /*---- position the container to be centered on enemy ----*/
       explosion.css('left', x - explosion.width() / 2);
       explosion.css('top', y - explosion.height() / 2);
     

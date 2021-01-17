@@ -12,9 +12,9 @@
    matrix = matrix.split("");
 
    let font_size = 10;
-   let columns = c.width/font_size; /*----number of columns for the rain an array of drops - one per column ----*/
-   let drops = [];
-   /*----x below is the x coordinate 1 = y co-ordinate of the drop(same for every drop initially)----*/
+   let columns = c.width/font_size; /*----number of columns for the rain ----*/
+   let drops = [];    /*----  an array of drops - one per column
+                    x below is the x coordinate 1 = y co-ordinate of the drop(same for every drop initially)----*/
    for(let x = 0; x < columns; x++)
        drops[x] = 1; 
 
@@ -26,7 +26,7 @@
        ctx.fillRect(0, 0, c.width, c.height);          
 
        ctx.fillStyle = GameSettings.matrixOn == true? "#0F0":"#000"; 
-       
+
        ctx.font = font_size + "px arial";
        /*----looping over drops ----*/
        for(let i = 0; i < drops.length; i++)

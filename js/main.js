@@ -7,7 +7,7 @@ function tick() {
     GameManager.bullets.update(dt);
     GameManager.enemies.updateEnemy(dt);
     GameManager.player.updatePlayer();
-    // playSound('playingSong')
+    playSound('playingSong')
     let timer = setTimeout(tick, GameSettings.targetFPS);
     /*----------  stop tick from updating and manage the end  ----------*/
     if (GameManager.player.dead == true) {
