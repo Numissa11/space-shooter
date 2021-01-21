@@ -67,9 +67,9 @@ class BulletCollection {
             this.lastAdded = 0;
             this.listBullets.push(
                 new Bullet(
-                    'bullet_' + this.total_bullets,
-                    GameManager.assets['laserBlue'],
-                    new Point((this.player.position.x) + (this.player.size.width),
+                    'bullet_' + this.total_bullets, //divName
+                    GameManager.assets['laserBlue'], // imgName
+                    new Point((this.player.position.x) + (this.player.size.width), //position
                         (this.player.position.y) + (this.player.size.height / 2))
                 )
             );
