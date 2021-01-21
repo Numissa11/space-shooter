@@ -10,7 +10,8 @@ function tick() {
 
 
     let now = Date.now();
-    let dt = now - GameManager.lastUpdated;
+    let dt = now - GameManager.lastUpdated;  
+    console.log('dt', dt);
     GameManager.lastUpdated = now;
     GameManager.bullets.update(dt);
     GameManager.enemies.updateEnemy(dt);
