@@ -3,7 +3,6 @@
 class Enemy extends Sprite {
       constructor(divName, assetDesc, position, boundaryRect) {
             super(divName, position, assetDesc.fileName, new Size(assetDesc.width, assetDesc.height));
-            this.life = GameSettings.enemyLife;
             this.dead = false;
             this.boundaryRect = boundaryRect;
             this.boundaryRect.shift(this.anchorShift.x, this.anchorShift.y);
@@ -16,11 +15,7 @@ class Enemy extends Sprite {
             let arrayInc = [inc, -inc];
             let direction = arrayInc[Math.floor(Math.random() * arrayInc.length)]
             this.incrementPosition(-inc, (0.8 * direction));
-            this.life -= dt;
-
-            if (this.life < 0) {
-                  this.killMe();
-            }
+           
             /*----------  enemy cannot go out of the play Area  ----------*/
 
             if (this.boundaryRect.OutsideVertical(this.position.y) == true) {

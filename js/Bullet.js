@@ -1,4 +1,4 @@
-/*---------- bullet class that herit fro Sprite class ----------*/
+/*---------- bullet class that herit from Sprite class ----------*/
 
 class Bullet extends Sprite {
     constructor(divName, assetDesc, position) {
@@ -28,12 +28,11 @@ class Bullet extends Sprite {
 /*----------  bullet array created with BulletCollection class  ----------*/
 
 class BulletCollection {
-    constructor(player, enemies) {
+    constructor(player) {
         this.listBullets = [];
         this.lastAdded = 0;
         this.player = player;
         this.total_bullets = 0;
-        this.enemies = enemies;
     }
     /*----------  reset all bullets info ----------*/
 

@@ -25,12 +25,12 @@ const GameSettings = {
             space: 32
       },
       targetFPS: 1000 / 140,
-      playerMoveStep: 5,
+      playerMoveStep: 10,
       score: 100,
       /*----------  bullets  ----------*/
       bulletSpeed: 800 / 1000,
       bulletLife: 2000,
-      bulletFireRate: 300,
+      bulletFireRate: 200,
       topCorner: 10,
       /*----------  enemy  ----------*/
       enemySpeed: 300 / 1000,

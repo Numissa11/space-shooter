@@ -1,6 +1,14 @@
 /*----------  fonction that update every FPS  ----------*/
 
 function tick() {
+
+    /*------ console.log() -------------*/ 
+    console.log('player', GameManager.player);
+    console.log('enemies', GameManager.enemies);
+    console.log(' bullet', GameManager.bullets)
+    console.log('rect',  new Rect(40, 40, GameSettings.playAreaWidth - 80, GameSettings.playAreaHeight - 80));
+
+
     let now = Date.now();
     let dt = now - GameManager.lastUpdated;
     GameManager.lastUpdated = now;
@@ -138,6 +146,7 @@ function resetGame() {
     resetEnemy();
     GameManager.lastUpdated = Date.now();
     GameManager.elapsedTime = 0;
+
 }
 /*----------  process the images  ----------*/
 
@@ -166,6 +175,7 @@ $(function () {
     initSounds();
     processAsset(0);
     $(document).keydown(
+        
         function (e) {
             switch (e.which) {
                 case GameSettings.keyPress.up:

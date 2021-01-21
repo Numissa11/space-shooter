@@ -7,6 +7,7 @@
     }
 
     update(x, y) {
+        
         this.origin.x = x;
         this.origin.y = y;
         this.max.x = this.origin.x + this.size.width;
