@@ -2,25 +2,25 @@
 
 function tick() {
 
-    /*------ console.log() -------------*/ 
+    /*------ console.log() -------------*/
     console.log('player', GameManager.player);
     console.log('enemies', GameManager.enemies);
-    console.log(' bullet', GameManager.bullets)
-    console.log('rect',  new Rect(40, 40, GameSettings.playAreaWidth - 80, GameSettings.playAreaHeight - 80));
-
+    console.log('bullet', GameManager.bullets)
+    console.log('rect', new Rect(40, 40, GameSettings.playAreaWidth, GameSettings.playAreaHeight - 40));
+    console.log('assets', GameManager.assets);
 
     let now = Date.now();
-    let dt = now - GameManager.lastUpdated;  
+    let dt = now - GameManager.lastUpdated;
     console.log('dt', dt);
     GameManager.lastUpdated = now;
     GameManager.bullets.update(dt);
     GameManager.enemies.updateEnemy(dt);
     GameManager.player.updatePlayer();
     playSound('playingSong')
-    let timer = setTimeout(tick, GameSettings.targetFPS);
+    let timer = requestAnimationFrame(tick);
     /*----------  stop tick from updating and manage the end  ----------*/
     if (GameManager.player.dead == true) {
-        clearTimeout(timer);
+        cancelAnimationFrame(timer);
         removeStars();
         endGameManager();
     }
@@ -176,7 +176,7 @@ $(function () {
     initSounds();
     processAsset(0);
     $(document).keydown(
-        
+
         function (e) {
             switch (e.which) {
                 case GameSettings.keyPress.up:
