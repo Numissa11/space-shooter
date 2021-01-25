@@ -15,7 +15,7 @@ function tick() {
     GameManager.lastUpdated = now;
     GameManager.bullets.update(dt);
     GameManager.enemies.updateEnemy(dt);
-    GameManager.player.updatePlayer();
+   // GameManager.player.updatePlayer();
     playSound('playingSong')
     let timer = requestAnimationFrame(tick);
     /*----------  stop tick from updating and manage the end  ----------*/

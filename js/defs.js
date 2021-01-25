@@ -34,7 +34,7 @@ const GameSettings = {
       topCorner: 10,
       /*----------  enemy  ----------*/
       enemySpeed: 300 / 1000,
-      enemyLife: 5000,
+      enemyLife: 4000,
       enemyComingRate: 2000,
       /*----------  play Area  ----------*/
       playAreaWidth: 800,
